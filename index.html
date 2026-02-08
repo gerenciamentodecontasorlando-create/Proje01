@@ -7,18 +7,20 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         :root {
-            --primary: #6a11cb;
-            --primary-light: #8a2be2;
-            --secondary: #f0e6ff;
-            --accent: #ff6b6b;
-            --accent2: #4dabf7;
-            --dark: #2d3748;
-            --light: #f9f7ff;
-            --text: #444;
-            --border: #d1c4e9;
-            --success: #2ecc71;
-            --warning: #f39c12;
-            --danger: #e74c3c;
+            --primary: #9c27b0;
+            --primary-light: #ba68c8;
+            --primary-dark: #7b1fa2;
+            --secondary: #f3e5f5;
+            --accent: #ff4081;
+            --accent2: #2196f3;
+            --dark: #2c3e50;
+            --light: #f9f9f9;
+            --text: #333;
+            --border: #e1bee7;
+            --success: #4caf50;
+            --warning: #ff9800;
+            --danger: #f44336;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
         
         * {
@@ -29,26 +31,28 @@
         }
         
         body {
-            background: linear-gradient(135deg, #f9f7ff 0%, #eef2ff 100%);
+            background: linear-gradient(135deg, #f8f9ff 0%, #f3e5f5 100%);
             color: var(--text);
             line-height: 1.7;
             min-height: 100vh;
+            padding-bottom: 50px;
         }
         
         .container {
-            max-width: 1300px;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 0 20px;
         }
         
-        /* Header com Logo */
+        /* Header */
         header {
-            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            background: linear-gradient(135deg, var(--primary-dark), var(--primary));
             color: white;
-            padding: 25px 0;
+            padding: 30px 0;
             text-align: center;
-            border-radius: 0 0 25px 25px;
-            box-shadow: 0 10px 30px rgba(106, 17, 203, 0.25);
+            border-bottom-left-radius: 30px;
+            border-bottom-right-radius: 30px;
+            box-shadow: 0 10px 30px rgba(156, 39, 176, 0.3);
             margin-bottom: 40px;
             position: relative;
             overflow: hidden;
@@ -63,66 +67,77 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 20px;
+            margin-bottom: 25px;
             gap: 20px;
         }
         
         .logo {
-            width: 80px;
-            height: 80px;
+            width: 100px;
+            height: 100px;
             background: white;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 2rem;
+            font-size: 2.5rem;
             font-weight: bold;
             color: var(--primary);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            border: 3px solid rgba(255, 255, 255, 0.3);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            border: 4px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .logo i {
+            font-size: 3rem;
         }
         
         .logo-code {
             font-family: 'Courier New', monospace;
             background: rgba(0, 0, 0, 0.2);
-            padding: 8px 15px;
+            padding: 10px 20px;
             border-radius: 10px;
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             letter-spacing: 2px;
+            border: 1px dashed rgba(255, 255, 255, 0.3);
         }
         
         header h1 {
-            font-size: 2.8rem;
-            margin-bottom: 10px;
+            font-size: 3rem;
+            margin-bottom: 15px;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
         }
         
-        header p {
-            font-size: 1.2rem;
+        .subtitle {
+            font-size: 1.3rem;
             opacity: 0.9;
-            max-width: 900px;
-            margin: 0 auto 15px;
+            max-width: 800px;
+            margin: 0 auto 20px;
+            line-height: 1.6;
         }
         
         .author {
-            margin-top: 10px;
+            margin-top: 15px;
             font-style: italic;
             font-weight: 500;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             color: rgba(255, 255, 255, 0.95);
+            background: rgba(0, 0, 0, 0.2);
+            display: inline-block;
+            padding: 10px 25px;
+            border-radius: 50px;
         }
         
         /* Navegação */
         nav {
             background: white;
-            border-radius: 15px;
-            padding: 20px;
-            margin: 30px auto;
+            border-radius: 20px;
+            padding: 25px;
+            margin: 30px auto 40px;
             max-width: 1100px;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
+            box-shadow: var(--shadow);
             position: sticky;
             top: 20px;
             z-index: 100;
+            border: 2px solid var(--border);
         }
         
         nav ul {
@@ -130,27 +145,29 @@
             justify-content: center;
             flex-wrap: wrap;
             list-style: none;
-            gap: 10px;
+            gap: 15px;
         }
         
         nav a {
             text-decoration: none;
-            color: var(--primary);
-            padding: 10px 20px;
+            color: var(--primary-dark);
+            padding: 12px 25px;
             border-radius: 50px;
             font-weight: 600;
             transition: all 0.3s;
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
             border: 2px solid transparent;
+            background: var(--secondary);
         }
         
-        nav a:hover {
-            background-color: var(--secondary);
-            border-color: var(--primary-light);
+        nav a:hover, nav a.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary-dark);
             transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(138, 43, 226, 0.15);
+            box-shadow: 0 5px 15px rgba(156, 39, 176, 0.2);
         }
         
         /* Conteúdo Principal */
@@ -163,37 +180,44 @@
         .section {
             background-color: white;
             border-radius: 20px;
-            padding: 35px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
-            transition: transform 0.4s, box-shadow 0.4s;
-            border: 1px solid rgba(0, 0, 0, 0.03);
+            padding: 40px;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s;
+            border-left: 6px solid var(--primary);
         }
         
         .section:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+            transform: translateY(-5px);
         }
         
         .section h2 {
-            color: var(--primary);
-            border-bottom: 4px solid var(--secondary);
+            color: var(--primary-dark);
+            border-bottom: 3px solid var(--secondary);
             padding-bottom: 15px;
             margin-bottom: 25px;
             display: flex;
             align-items: center;
             gap: 15px;
-            font-size: 1.8rem;
+            font-size: 2rem;
         }
         
         .section h2 i {
-            font-size: 2rem;
-            background: var(--secondary);
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            font-size: 2.2rem;
+            color: var(--primary);
+        }
+        
+        .section h3 {
+            color: var(--primary-dark);
+            margin: 25px 0 15px;
+            font-size: 1.6rem;
+            border-left: 4px solid var(--accent);
+            padding-left: 15px;
+        }
+        
+        .section h4 {
+            color: var(--dark);
+            margin: 20px 0 10px;
+            font-size: 1.3rem;
         }
         
         /* Tabelas */
@@ -201,9 +225,9 @@
             width: 100%;
             border-collapse: collapse;
             margin: 25px 0;
-            border-radius: 15px;
+            border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
         }
         
         th, td {
@@ -213,46 +237,46 @@
         }
         
         th {
-            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
             color: white;
             font-weight: 600;
-            font-size: 1.05rem;
+            font-size: 1.1rem;
         }
         
         tr:nth-child(even) {
-            background-color: rgba(240, 230, 255, 0.3);
+            background-color: rgba(243, 229, 245, 0.3);
         }
         
         tr:hover {
-            background-color: rgba(106, 17, 203, 0.05);
+            background-color: rgba(156, 39, 176, 0.05);
         }
         
         /* Boxes de Destaque */
-        .highlight-box {
+        .info-box {
             background: linear-gradient(135deg, #e3f2fd, #f3e5f5);
             border-left: 6px solid var(--accent2);
             padding: 25px;
-            margin: 30px 0;
+            margin: 25px 0;
             border-radius: 0 15px 15px 0;
-            box-shadow: 0 5px 15px rgba(77, 171, 247, 0.1);
+            box-shadow: 0 5px 15px rgba(33, 150, 243, 0.1);
         }
         
-        .highlight-box h3 {
+        .info-box h3 {
             color: var(--accent2);
             margin-bottom: 15px;
             display: flex;
             align-items: center;
             gap: 10px;
-            font-size: 1.4rem;
+            font-size: 1.5rem;
         }
         
         .warning-box {
             background: linear-gradient(135deg, #fff8e1, #ffecb3);
             border-left: 6px solid var(--warning);
             padding: 25px;
-            margin: 30px 0;
+            margin: 25px 0;
             border-radius: 0 15px 15px 0;
-            box-shadow: 0 5px 15px rgba(243, 156, 18, 0.1);
+            box-shadow: 0 5px 15px rgba(255, 152, 0, 0.1);
         }
         
         .warning-box h3 {
@@ -261,16 +285,15 @@
             display: flex;
             align-items: center;
             gap: 10px;
-            font-size: 1.4rem;
+            font-size: 1.5rem;
         }
         
         .danger-box {
             background: linear-gradient(135deg, #ffebee, #ffcdd2);
             border-left: 6px solid var(--danger);
             padding: 25px;
-            margin: 30px 0;
+            margin: 25px 0;
             border-radius: 0 15px 15px 0;
-            box-shadow: 0 5px 15px rgba(231, 76, 60, 0.1);
         }
         
         .danger-box h3 {
@@ -279,7 +302,7 @@
             display: flex;
             align-items: center;
             gap: 10px;
-            font-size: 1.4rem;
+            font-size: 1.5rem;
         }
         
         /* Questões */
@@ -290,54 +313,94 @@
         .question {
             background-color: white;
             border-radius: 15px;
-            padding: 25px;
+            padding: 30px;
             margin: 30px 0;
             border: 1px solid var(--border);
-            transition: all 0.3s;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.03);
-        }
-        
-        .question:hover {
-            box-shadow: 0 8px 25px rgba(106, 17, 203, 0.1);
-            border-color: var(--primary-light);
-        }
-        
-        .question h4 {
-            color: var(--dark);
-            margin-bottom: 15px;
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            font-size: 1.2rem;
-            line-height: 1.5;
+            position: relative;
         }
         
         .question-number {
-            background: linear-gradient(135deg, var(--primary), var(--primary-light));
+            position: absolute;
+            top: -15px;
+            left: -15px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
             color: white;
-            min-width: 40px;
-            height: 40px;
+            width: 50px;
+            height: 50px;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
             font-weight: bold;
-            font-size: 1.1rem;
-            flex-shrink: 0;
-            margin-right: 15px;
-        }
-        
-        .question-header {
-            display: flex;
-            align-items: flex-start;
-            width: 100%;
+            font-size: 1.3rem;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
         
         .question-text {
-            flex: 1;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            font-weight: 600;
+            color: var(--dark);
+            line-height: 1.6;
         }
         
-        .answer {
+        .options {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 25px;
+        }
+        
+        .option {
+            padding: 15px 20px;
+            border-radius: 10px;
+            background: var(--secondary);
+            cursor: pointer;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .option:hover {
+            background: rgba(156, 39, 176, 0.1);
+            border-color: var(--primary-light);
+        }
+        
+        .option-letter {
+            background: var(--primary);
+            color: white;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            flex-shrink: 0;
+        }
+        
+        .correct {
+            background: rgba(76, 175, 80, 0.1);
+            border-color: var(--success);
+        }
+        
+        .correct .option-letter {
+            background: var(--success);
+        }
+        
+        .incorrect {
+            background: rgba(244, 67, 54, 0.1);
+            border-color: var(--danger);
+        }
+        
+        .incorrect .option-letter {
+            background: var(--danger);
+        }
+        
+        .answer-explanation {
             background: linear-gradient(135deg, #e8f4ff, #d9edff);
             padding: 25px;
             border-radius: 12px;
@@ -346,7 +409,7 @@
             display: none;
         }
         
-        .answer.show {
+        .answer-explanation.show {
             display: block;
             animation: fadeIn 0.5s ease;
         }
@@ -356,31 +419,31 @@
             to { opacity: 1; transform: translateY(0); }
         }
         
-        .answer h5 {
+        .answer-explanation h4 {
             color: var(--accent2);
             margin-bottom: 10px;
-            font-size: 1.2rem;
+            font-size: 1.3rem;
         }
         
-        .toggle-answer {
+        .show-answer {
             background: var(--primary);
             color: white;
             border: none;
-            padding: 10px 20px;
+            padding: 12px 25px;
             border-radius: 8px;
             cursor: pointer;
             font-weight: 600;
-            margin-top: 15px;
             transition: all 0.3s;
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
+            font-size: 1rem;
         }
         
-        .toggle-answer:hover {
-            background: var(--primary-light);
+        .show-answer:hover {
+            background: var(--primary-dark);
             transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(106, 17, 203, 0.3);
+            box-shadow: 0 5px 15px rgba(156, 39, 176, 0.3);
         }
         
         /* Rodapé */
@@ -396,7 +459,7 @@
         }
         
         .footer-text {
-            font-size: 1.3rem;
+            font-size: 1.4rem;
             font-weight: 700;
             color: var(--primary);
             margin-bottom: 10px;
@@ -405,20 +468,20 @@
         /* Elementos Visuais */
         .pill {
             display: inline-block;
-            background: linear-gradient(135deg, var(--secondary), #e0d6ff);
-            color: var(--primary);
-            padding: 6px 18px;
+            background: linear-gradient(135deg, var(--secondary), #e1bee7);
+            color: var(--primary-dark);
+            padding: 8px 20px;
             border-radius: 50px;
             font-weight: 600;
-            margin: 5px 8px 5px 0;
+            margin: 5px 10px 5px 0;
             font-size: 0.95rem;
-            box-shadow: 0 3px 8px rgba(138, 43, 226, 0.1);
+            box-shadow: 0 3px 8px rgba(156, 39, 176, 0.1);
         }
         
         .timeline {
             position: relative;
             padding-left: 40px;
-            margin: 25px 0;
+            margin: 30px 0;
         }
         
         .timeline:before {
@@ -434,8 +497,8 @@
         
         .timeline-item {
             position: relative;
-            margin-bottom: 35px;
-            padding: 20px;
+            margin-bottom: 40px;
+            padding: 25px;
             background: white;
             border-radius: 12px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
@@ -445,7 +508,7 @@
             content: '';
             position: absolute;
             left: -45px;
-            top: 25px;
+            top: 30px;
             width: 16px;
             height: 16px;
             border-radius: 50%;
@@ -457,8 +520,8 @@
         .medication-card {
             background: white;
             border-radius: 12px;
-            padding: 20px;
-            margin: 15px 0;
+            padding: 25px;
+            margin: 20px 0;
             border-left: 5px solid var(--success);
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
         }
@@ -474,7 +537,7 @@
         /* Responsividade */
         @media (max-width: 992px) {
             header h1 {
-                font-size: 2.2rem;
+                font-size: 2.5rem;
             }
             
             nav ul {
@@ -488,32 +551,31 @@
             }
             
             .section {
-                padding: 25px;
+                padding: 30px;
             }
         }
         
         @media (max-width: 768px) {
             header h1 {
-                font-size: 1.8rem;
+                font-size: 2rem;
             }
             
             .logo-container {
                 flex-direction: column;
-                gap: 10px;
+                gap: 15px;
             }
             
             .section h2 {
-                font-size: 1.5rem;
+                font-size: 1.7rem;
             }
             
-            .section h2 i {
-                width: 50px;
-                height: 50px;
-                font-size: 1.5rem;
+            .section {
+                padding: 25px;
             }
             
             th, td {
                 padding: 12px 15px;
+                font-size: 0.9rem;
             }
             
             table {
@@ -543,15 +605,11 @@
             color: var(--accent);
         }
         
-        .color-success {
-            color: var(--success);
-        }
-        
         .important-note {
             background: linear-gradient(135deg, #fff3e0, #ffe0b2);
-            padding: 20px;
+            padding: 25px;
             border-radius: 12px;
-            margin: 20px 0;
+            margin: 25px 0;
             border: 2px dashed var(--warning);
         }
         
@@ -559,464 +617,815 @@
             font-size: 0.9rem;
             color: #666;
             font-style: italic;
-            margin-top: 10px;
+            margin-top: 15px;
+            border-top: 1px dashed #ccc;
+            padding-top: 10px;
+        }
+        
+        .image-container {
+            text-align: center;
+            margin: 25px 0;
+        }
+        
+        .image-container img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        ul, ol {
+            padding-left: 30px;
+            margin: 15px 0;
+        }
+        
+        li {
+            margin-bottom: 10px;
         }
     </style>
 </head>
 <body>
     <!-- Header com Logo e Senha -->
     <header>
-        <div class="header-content">
+        <div class="header-content container">
             <div class="logo-container">
                 <div class="logo">
-                    <i class="fas fa-baby"></i>
+                    <i class="fas fa-female"></i>
                 </div>
                 <div>
                     <h1>Guia Completo da Gestação</h1>
-                    <div class="logo-code">Senha de Acesso: 81069844</div>
+                    <div class="logo-code">Acesso: 81069844</div>
                 </div>
             </div>
-            <p>Abordagem clínica detalhada, tratamentos, exames específicos e condutas do pré-natal ao parto</p>
+            <p class="subtitle">Um compêndio detalhado sobre gestação, desde a abordagem inicial até o parto, incluindo medicamentos, exames específicos, tratamentos e 50 questões comentadas de alto nível</p>
             <p class="author">Desenvolvido por Orlando Abreu</p>
         </div>
     </header>
     
     <!-- Navegação -->
-    <nav>
-        <div class="container">
-            <ul>
-                <li><a href="#abordagem"><i class="fas fa-stethoscope"></i> Abordagem Inicial</a></li>
-                <li><a href="#trimestres"><i class="fas fa-calendar-alt"></i> Trimestres</a></li>
-                <li><a href="#medicamentos"><i class="fas fa-pills"></i> Medicamentos</a></li>
-                <li><a href="#exames"><i class="fas fa-microscope"></i> Exames</a></li>
-                <li><a href="#parto"><i class="fas fa-baby"></i> Parto</a></li>
-                <li><a href="#complicacoes"><i class="fas fa-exclamation-triangle"></i> Complicações</a></li>
-                <li><a href="#questoes"><i class="fas fa-question-circle"></i> Questões (50)</a></li>
-            </ul>
-        </div>
+    <nav class="container">
+        <ul>
+            <li><a href="#abordagem" class="active"><i class="fas fa-stethoscope"></i> Abordagem Inicial</a></li>
+            <li><a href="#fisiologia"><i class="fas fa-heartbeat"></i> Fisiologia da Gestação</a></li>
+            <li><a href="#trimestres"><i class="fas fa-calendar-alt"></i> Trimestres</a></li>
+            <li><a href="#medicamentos"><i class="fas fa-pills"></i> Medicamentos</a></li>
+            <li><a href="#exames"><i class="fas fa-microscope"></i> Exames Específicos</a></li>
+            <li><a href="#parto"><i class="fas fa-baby"></i> Parto e Puerpério</a></li>
+            <li><a href="#questoes"><i class="fas fa-question-circle"></i> 50 Questões</a></li>
+        </ul>
     </nav>
     
     <div class="container">
         <main>
             <!-- Seção 1: Abordagem Inicial -->
             <section id="abordagem" class="section">
-                <h2><i class="fas fa-stethoscope"></i> Abordagem Inicial e Consulta Pré-Natal</h2>
-                <p>A primeira consulta pré-natal é fundamental para estabelecer o vínculo com a gestante, avaliar riscos e planejar o acompanhamento. Deve ser realizada o mais precocemente possível, idealmente até a 12ª semana de gestação.</p>
+                <h2><i class="fas fa-stethoscope"></i> Abordagem Inicial da Gestante</h2>
                 
-                <div class="highlight-box">
-                    <h3><i class="fas fa-lightbulb"></i> Objetivos da Primeira Consulta</h3>
+                <div class="image-container">
+                    <div style="background: linear-gradient(135deg, var(--secondary), white); padding: 30px; border-radius: 15px; border: 2px dashed var(--primary-light);">
+                        <h3 style="color: var(--primary); margin-bottom: 15px;">Consulta Pré-Natal Inicial</h3>
+                        <p>A primeira consulta pré-natal é fundamental para estabelecer o vínculo com a gestante, avaliar riscos e planejar o acompanhamento. Deve ser realizada o mais precocemente possível, idealmente até a 12ª semana de gestação.</p>
+                    </div>
+                </div>
+                
+                <h3>História Clínica Detalhada</h3>
+                <p>A anamnese deve ser minuciosa e abrangente, incluindo:</p>
+                
+                <div class="info-box">
+                    <h3><i class="fas fa-clipboard-list"></i> Componentes da Anamnese Completa</h3>
                     <ul>
-                        <li><strong>Confirmar a gestação</strong> e estimar a idade gestacional (IG) pela data da última menstruação (DUM) e/ou ultrassom</li>
-                        <li><strong>Avaliar condições clínicas e obstétricas prévias</strong> (histórico de doenças crônicas, cirurgias, gestações anteriores)</li>
-                        <li><strong>Identificar fatores de risco</strong> para complicações maternas e fetais</li>
-                        <li><strong>Estabelecer plano de acompanhamento</strong> individualizado baseado no perfil de risco</li>
-                        <li><strong>Orientar sobre mudanças fisiológicas</strong> e cuidados gerais durante a gestação</li>
-                        <li><strong>Iniciar suplementação vitamínica</strong> (ácido fólico, ferro) quando indicado</li>
+                        <li><strong>Identificação:</strong> Idade, ocupação, estado civil, escolaridade, hábitos de vida</li>
+                        <li><strong>História ginecológica:</strong> Menarca, ciclo menstrual, DUM, métodos contraceptivos utilizados</li>
+                        <li><strong>História obstétrica:</strong> Número de gestações, partos, abortos, complicações anteriores, peso dos recém-nascidos, tipo de parto, intercorrências</li>
+                        <li><strong>História médica pregressa:</strong> Doenças crônicas (hipertensão, diabetes, tireoidopatias), cirurgias, alergias, transfusões, hospitalizações</li>
+                        <li><strong>História familiar:</strong> Diabetes, hipertensão, gemelaridade, malformações congênitas, doenças genéticas, trombofilias</li>
+                        <li><strong>Hábitos de vida:</strong> Tabagismo (quantidade e tempo), etilismo (quantidade), uso de drogas ilícitas, atividade física, hábitos alimentares, exposição ocupacional a riscos</li>
+                        <li><strong>Medicações em uso:</strong> Prescritas e automedicação, fitoterápicos, suplementos, vacinas recentes</li>
+                        <li><strong>História psicossocial:</strong> Suporte familiar, situação econômica, violência doméstica, saúde mental</li>
                     </ul>
                 </div>
                 
-                <h3>Componentes da Consulta Inicial</h3>
+                <h3>Exame Físico Completo</h3>
+                <p>O exame físico na primeira consulta deve ser completo e sistemático:</p>
+                
                 <table>
                     <thead>
                         <tr>
-                            <th>Componente</th>
-                            <th>Descrição Detalhada</th>
+                            <th>Sistema</th>
+                            <th>Elementos a Avaliar</th>
                             <th>Importância</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td><strong>Anamnese Completa</strong></td>
-                            <td>
-                                <p><strong>Histórico obstétrico:</strong> Número de gestações, partos, abortos, complicações anteriores, peso dos recém-nascidos, tipo de parto.</p>
-                                <p><strong>Histórico médico:</strong> Doenças crônicas (hipertensão, diabetes, tireoidopatias), cirurgias, alergias, transfusões.</p>
-                                <p><strong>Histórico familiar:</strong> Diabetes, hipertensão, gemelaridade, malformações congênitas, doenças genéticas.</p>
-                                <p><strong>Hábitos de vida:</strong> Tabagismo, etilismo, uso de drogas, atividade física, ocupação, hábitos alimentares.</p>
-                                <p><strong>Medicações em uso:</strong> Prescritas e auto-medicação, fitoterápicos, suplementos.</p>
-                            </td>
-                            <td>Identificação de fatores de risco e condições preexistentes que podem impactar a gestação. Permite estratificação de risco e planejamento preventivo.</td>
+                            <td><strong>Geral</strong></td>
+                            <td>Peso, altura, IMC, pressão arterial, frequência cardíaca, temperatura, estado nutricional</td>
+                            <td>Estabelecer baseline, identificar obesidade/baixo peso, hipertensão</td>
                         </tr>
                         <tr>
-                            <td><strong>Exame Físico Completo</strong></td>
-                            <td>
-                                <p><strong>Avaliação geral:</strong> Peso, altura, IMC, pressão arterial, frequência cardíaca.</p>
-                                <p><strong>Exame obstétrico:</strong> Altura uterina (a partir de 12 semanas), ausculta de batimentos cardíacos fetais (a partir de 10-12 semanas com Doppler).</p>
-                                <p><strong>Exame das mamas:</strong> Avaliação de mamilos, presença de nódulos, orientação para aleitamento.</p>
-                                <p><strong>Exame pélvico:</strong> Avaliação vaginal, colo uterino, coleta de Papanicolau se necessário.</p>
-                            </td>
-                            <td>Detecção precoce de anormalidades, estabelecimento de baseline para acompanhamento, identificação de sinais de alerta.</td>
+                            <td><strong>Obstétrico</strong></td>
+                            <td>Altura uterina (a partir de 12 semanas), ausculta de BCF (a partir de 10-12 semanas com Doppler), toque vaginal (se indicado)</td>
+                            <td>Confirmar idade gestacional, vitalidade fetal, avaliar colo uterino</td>
                         </tr>
                         <tr>
-                            <td><strong>Exames Laboratoriais Iniciais</strong></td>
-                            <td>
-                                <p><strong>Hemograma completo:</strong> Avaliação de anemia, plaquetopenia.</p>
-                                <p><strong>Glicemia de jejum:</strong> Rastreamento de diabetes pré-existente.</p>
-                                <p><strong>Sorologias:</strong> HIV, sífilis (VDRL), hepatites B e C, toxoplasmose (IgG e IgM), rubéola (IgG).</p>
-                                <p><strong>Urina tipo I e urocultura:</strong> Pesquisa de infecção urinária assintomática.</p>
-                                <p><strong>Tipagem sanguínea e fator Rh:</strong> Identificação de risco de isoimunização.</p>
-                                <p><strong>TSH e T4 livre:</strong> Avaliação da função tireoidiana.</p>
-                            </td>
-                            <td>Rastreamento de condições que podem afetar a gestação, diagnóstico precoce de infecções, prevenção de complicações.</td>
+                            <td><strong>Cardiovascular</strong></td>
+                            <td>Ausculta cardíaca, pulsos periféricos, pesquisa de edema</td>
+                            <td>Identificar sopros, arritmias, insuficiência venosa</td>
                         </tr>
                         <tr>
-                            <td><strong>Ultrassom Obstétrico Inicial</strong></td>
-                            <td>
-                                <p><strong>Transvaginal (5-8 semanas):</strong> Confirmação de gestação intrauterina, número de embriões, vitalidade (batimentos cardíacos), localização.</p>
-                                <p><strong>Abdominal (11-14 semanas):</strong> Translucência nucal, osso nasal, avaliação morfológica precoce, datação precisa.</p>
-                            </td>
-                            <td>Confirmação de gestação intrauterina, vitalidade, datação precisa, rastreamento de anomalias cromossômicas.</td>
+                            <td><strong>Respiratório</strong></td>
+                            <td>Ausculta pulmonar, expansibilidade torácica</td>
+                            <td>Avaliar condições pré-existentes (asma, DPOC)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Abdome</strong></td>
+                            <td>Inspeção, palpação, percussão, ausculta</td>
+                            <td>Identificar massas, dor à palpação, cirurgias prévias</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Mamas</strong></td>
+                            <td>Inspeção, palpação, avaliação de mamilos, pesquisa de nódulos</td>
+                            <td>Preparação para amamentação, rastreamento de patologias</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Extremidades</strong></td>
+                            <td>Pesquisa de edema, varizes, reflexos osteotendinosos</td>
+                            <td>Identificar risco de trombose, pré-eclâmpsia</td>
                         </tr>
                     </tbody>
                 </table>
                 
+                <h3>Exames Laboratoriais Iniciais</h3>
+                <p>Os exames laboratoriais na primeira consulta têm objetivos específicos:</p>
+                
                 <div class="warning-box">
-                    <h3><i class="fas fa-exclamation-triangle"></i> Pontos Críticos da Primeira Consulta</h3>
+                    <h3><i class="fas fa-vial"></i> Exames Laboratoriais Obrigatórios (Ministério da Saúde)</h3>
                     <ul>
-                        <li><strong>Datação precisa:</strong> Fundamental para acompanhamento adequado e decisões sobre interrupção em casos de anomalias.</li>
-                        <li><strong>Identificação de gestação de alto risco:</strong> Encaminhamento precoce para pré-natal especializado quando necessário.</li>
-                        <li><strong>Orientação sobre sinais de alerta:</strong> Sangramento, dor abdominal intensa, edema súbito, cefaleia persistente, alterações visuais.</li>
-                        <li><strong>Início da suplementação:</strong> Ácido fólico (4mg/dia) para prevenção de defeitos do tubo neural, especialmente se não iniciado antes da concepção.</li>
+                        <li><strong>Hemograma completo:</strong> Avaliar anemia (Hb &lt;11g/dL no 1º e 3º trimestres, &lt;10.5g/dL no 2º), plaquetopenia (&lt;150.000/mm³)</li>
+                        <li><strong>Glicemia de jejum:</strong> Rastrear diabetes pré-existente (&gt;126mg/dL) ou em jejum alterada (&gt;92mg/dL)</li>
+                        <li><strong>Sorologias:</strong> 
+                            <br>- HIV (teste rápido ou ELISA)
+                            <br>- Sífilis (VDRL ou FTA-ABS)
+                            <br>- Hepatite B (HBsAg)
+                            <br>- Hepatite C (anti-HCV)
+                            <br>- Toxoplasmose (IgG e IgM)
+                            <br>- Rubéola (IgG)
+                        </li>
+                        <li><strong>Urina tipo I e urocultura:</strong> Pesquisar infecção urinária assintomática (bacteriúria &gt;10⁵ UFC/mL)</li>
+                        <li><strong>Tipagem sanguínea ABO e Rh:</strong> Identificar risco de isoimunização Rh</li>
+                        <li><strong>TSH e T4 livre:</strong> Avaliar função tireoidiana (TSH ideal: 1º trimestre 0.1-2.5 mUI/L, 2º 0.2-3.0, 3º 0.3-3.0)</li>
                     </ul>
+                </div>
+                
+                <h3>Ultrassonografia Obstétrica Inicial</h3>
+                <p>A ultrassonografia é essencial para:</p>
+                
+                <ul>
+                    <li><strong>Confirmar gestação intrauterina</strong> e excluir gravidez ectópica</li>
+                    <li><strong>Determinar número de embriões/fetos</strong> e corionicidade (em gestações múltiplas)</li>
+                    <li><strong>Avaliar vitalidade fetal</strong> (presença de batimentos cardíacos a partir de 6 semanas)</li>
+                    <li><strong>Estimar idade gestacional</strong> com precisão (CRL - comprimento cabeça-nádega entre 7-13 semanas tem acurácia de ±5 dias)</li>
+                    <li><strong>Avaliar anatomia fetal precoce</strong> e rastrear malformações maiores</li>
+                    <li><strong>Identificar anexos embrionários</strong> (localização da placenta, volume de líquido amniótico)</li>
+                </ul>
+                
+                <div class="important-note">
+                    <h4><i class="fas fa-exclamation-circle"></i> Ponto Crítico</h4>
+                    <p>A datação precisa pela ultrassonografia do primeiro trimestre é fundamental para todo o acompanhamento posterior. O CRL (comprimento cabeça-nádega) entre 7-13 semanas é o parâmetro mais acurado para estimar a idade gestacional, com margem de erro de apenas 3-5 dias.</p>
                 </div>
             </section>
             
-            <!-- Seção 2: Trimestres -->
+            <!-- Seção 2: Fisiologia da Gestação -->
+            <section id="fisiologia" class="section">
+                <h2><i class="fas fa-heartbeat"></i> Fisiologia da Gestação</h2>
+                
+                <p>A gestação envolve profundas alterações fisiológicas em todos os sistemas orgânicos da mulher, destinadas a suportar o crescimento e desenvolvimento fetal, preparar para o parto e lactação.</p>
+                
+                <h3>Alterações Cardiovasculares</h3>
+                
+                <div class="info-box">
+                    <h3><i class="fas fa-heart"></i> Adaptações Cardiovasculares na Gestação</h3>
+                    <ul>
+                        <li><strong>Aumento do volume sanguíneo:</strong> 40-50% acima dos níveis pré-gestacionais (de ~5L para ~7L), com maior aumento no volume plasmático (50%) que na massa eritrocitária (20-30%), resultando em anemia fisiológica</li>
+                        <li><strong>Aumento do débito cardíaco:</strong> 30-50% acima do basal, atingindo pico por volta da 25ª semana. Aumenta de ~5L/min para ~7L/min</li>
+                        <li><strong>Redução da resistência vascular periférica:</strong> Devido à vasodilatação mediada por prostaglandinas, óxido nítrico e relaxina</li>
+                        <li><strong>Alterações na pressão arterial:</strong> Redução de 5-10 mmHg na pressão arterial média durante o segundo trimestre, com retorno aos níveis pré-gestacionais no terceiro trimestre</li>
+                        <li><strong>Aumento da frequência cardíaca:</strong> 10-20 batimentos por minuto acima do basal</li>
+                        <li><strong>Murmúrio de fluxo:</strong> Presente em até 95% das gestantes, mais audível no foco pulmonar</li>
+                    </ul>
+                </div>
+                
+                <h3>Alterações Respiratórias</h3>
+                <ul>
+                    <li><strong>Aumento da ventilação minuto:</strong> 40-50% acima do basal devido ao aumento do volume corrente (35%) e da frequência respiratória (15%)</li>
+                    <li><strong>Redução da capacidade residual funcional:</strong> 20% devido à elevação do diafragma pelo útero gravídico</li>
+                    <li><strong>Alterações gasométricas:</strong> PaO₂ normal ou levemente aumentado (106-108 mmHg), PaCO₂ reduzido (28-32 mmHg), pH normal (compensação renal com excreção de bicarbonato)</li>
+                    <li><strong>Dispneia fisiológica:</strong> Presente em 60-70% das gestantes, principalmente no terceiro trimestre</li>
+                </ul>
+                
+                <h3>Alterações Renais e Hidroeletrolíticas</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Parâmetro</th>
+                            <th>Alteração</th>
+                            <th>Mecanismo/Implicação</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Filtração glomerular</strong></td>
+                            <td>Aumento de 40-50%</td>
+                            <td>Vasodilatação renal, aumento do fluxo sanguíneo renal. Resulta em redução da creatinina sérica (0.4-0.6 mg/dL)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Clearance de creatinina</strong></td>
+                            <td>Aumento para 150-200 mL/min</td>
+                            <td>Pode mascarar doença renal crônica leve</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Glicosúria</strong></td>
+                            <td>Presente em 5-50% das gestantes</td>
+                            <td>Redução do limiar de reabsorção tubular para glicose. Não é diagnóstico de diabetes gestacional isoladamente</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Proteinúria</strong></td>
+                            <td>Até 300 mg/24h é normal</td>
+                            <td>Aumento da filtração glomerular. Valores >300 mg/24h são patológicos</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Ácido úrico</strong></td>
+                            <td>Reduzido no 1º-2º trimestres</td>
+                            <td>Aumento da depuração renal. Elevação no 3º trimestre pode indicar pré-eclâmpsia</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Sódio e água</strong></td>
+                            <td>Retenção de 6-8L de água, 900 mEq de sódio</td>
+                            <td>Estimulação do sistema renina-angiotensina-aldosterona, ação da vasopressina</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <h3>Alterações Gastrointestinais</h3>
+                
+                <div class="warning-box">
+                    <h3><i class="fas fa-stomach"></i> Sintomas Gastrointestinais na Gestação</h3>
+                    <ul>
+                        <li><strong>Náuseas e vômitos:</strong> 50-90% das gestantes, pico entre 9-16 semanas, regridem até 20 semanas. Hiperêmese gravídica (0.3-3%) requer hospitalização</li>
+                        <li><strong>Refluxo gastroesofágico:</strong> 40-80% das gestantes, piora com progressão da gestação. Tratamento com antiácidos, alginatos, bloqueadores H2 (ranitidina), IBP (omeprazol)</li>
+                        <li><strong>Constipação intestinal:</strong> 11-38% das gestantes. Causas: redução da motilidade intestinal por progesterona, compressão uterina, suplementação de ferro</li>
+                        <li><strong>Hemorroidas:</strong> 25-35% das gestantes, pioram no terceiro trimestre e puerpério. Tratamento conservador (fibras, hidratação, banhos de assento)</li>
+                        <li><strong>Colecistopatias:</strong> Aumento do risco de litíase biliar devido à hipomotilidade da vesícula e alterações na composição da bile</li>
+                    </ul>
+                </div>
+                
+                <h3>Alterações Endócrinas e Metabólicas</h3>
+                <ul>
+                    <li><strong>Metabolismo de carboidratos:</strong> Resistência insulínica progressiva a partir do segundo trimestre, mediada por hormônios placentários (lactogênio placentário, cortisol, progesterona). Gliconeogênese hepática aumentada, redução da glicólise</li>
+                    <li><strong>Metabolismo lipídico:</strong> Aumento de triglicerídeos (2-4x), colesterol total (25-50%), LDL (50%), HDL (15-30%)</li>
+                    <li><strong>Tireoide:</strong> Aumento da TBG (2-3x), redução da T4 livre (especialmente no 1º trimestre), TSH pode estar suprimido no 1º trimestre (ação do hCG)</li>
+                    <li><strong>Paratireoide:</strong> Aumento do PTH (30-50%) para manter cálcio sérico normal apesar da transferência placentária</li>
+                    <li><strong>Supra-renal:</strong> Aumento do cortisol total (3x), mas cortisol livre normal. Aumento da aldosterona (10x) e renina (5x)</li>
+                </ul>
+                
+                <h3>Alterações Hematológicas</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Componente</th>
+                            <th>Alteração</th>
+                            <th>Significado Clínico</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Volume plasmático</strong></td>
+                            <td>Aumento de 40-50% (máximo 34-36 semanas)</td>
+                            <td>Hemodiluição, redução da viscosidade sanguínea, aumento do fluxo placentário</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Massa eritrocitária</strong></td>
+                            <td>Aumento de 20-30% (complementação com ferro)</td>
+                            <td>Necessidades aumentadas de ferro (1g na gestação)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Hemoglobina</strong></td>
+                            <td>Redução fisiológica (mínimo 28-34 semanas)</td>
+                            <td>Anemia fisiológica: Hb &lt;11g/dL (1º/3º trim) ou &lt;10.5g/dL (2º trim)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Leucócitos</strong></td>
+                            <td>Aumento progressivo (5.000-12.000 até 25.000/mm³ no trabalho de parto)</td>
+                            <td>Neutrofilia, desvio à esquerda possível. Não indica infecção isoladamente</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Plaquetas</strong></td>
+                            <td>Leve redução (trombocitopenia gestacional: 100.000-150.000/mm³ em 5-8%)</td>
+                            <td>Consumptivo, hemodiluição. Avaliar se &lt;100.000/mm³</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Fatores de coagulação</strong></td>
+                            <td>Aumento de I, VII, VIII, IX, X, XII; redução de XI, XIII</td>
+                            <td>Estado hipercoagulável (risco trombótico 5x maior)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+            
+            <!-- Seção 3: Trimestres da Gestação -->
             <section id="trimestres" class="section">
-                <h2><i class="fas fa-calendar-alt"></i> Período Gestacional por Trimestres</h2>
-                <p>A gestação é dividida em três trimestres, cada um com características fisiológicas, objetivos de acompanhamento e riscos específicos. O conhecimento dessas fases permite acompanhamento adequado e intervenções oportunas.</p>
+                <h2><i class="fas fa-calendar-alt"></i> Trimestres da Gestação</h2>
+                
+                <p>A gestação é dividida em três trimestres de aproximadamente 13-14 semanas cada, com características e objetivos de acompanhamento específicos.</p>
                 
                 <div class="timeline">
                     <div class="timeline-item">
                         <h3>Primeiro Trimestre (1ª a 13ª semana)</h3>
-                        <p><strong>Período de organogênese</strong> (formação dos órgãos fetais) e maior risco de abortamento espontâneo (10-20%). A gestante pode apresentar sintomas como náuseas, vômitos (50-80%), fadiga, mastalgia, polaciúria e alterações emocionais.</p>
+                        <p><strong>Período crítico da organogênese</strong> (formação dos órgãos e sistemas fetais). O embrião/feto é extremamente vulnerável a teratógenos.</p>
                         
                         <div class="danger-box">
-                            <h3><i class="fas fa-radiation-alt"></i> Atenção: Período Crítico para Teratógenos</h3>
-                            <p>Evitar exposição a teratógenos (medicamentos, radiação, infecções, substâncias químicas). A suplementação com <strong>ácido fólico (4mg/dia)</strong> é essencial para prevenção de defeitos do tubo neural (fechamento entre 22º e 28º dia após concepção).</p>
-                            <p><strong>Medicamentos contraindicados:</strong> Inibidores da ECA, antagonistas da angiotensina II, warfarina, misoprostol, isotretinoína, metotrexato, valproato.</p>
+                            <h3><i class="fas fa-radiation-alt"></i> Teratógenos no Primeiro Trimestre</h3>
+                            <p><strong>Período mais sensível:</strong> 3ª a 8ª semana pós-concepção (5ª a 10ª semana de gestação).</p>
+                            <p><strong>Principais teratógenos:</strong></p>
+                            <ul>
+                                <li><strong>Medicamentos:</strong> Isotretinoína (anomalias CNS, cardíacas, craniofaciais), warfarina (embriopatia da warfarina: hipoplasia nasal, estrias ósseas), lítio (anomalia de Ebstein), valproato (defeitos do tubo neural, fenda palatina)</li>
+                                <li><strong>Infecções:</strong> Rubéola (catarata, surdez, cardiopatia), toxoplasmose (hidrocefalia, calcificações intracranianas), citomegalovírus (microcefalia, calcificações, surdez), Zika vírus (microcefalia, artrogripose)</li>
+                                <li><strong>Substâncias:</strong> Álcool (síndrome alcoólica fetal: retardo crescimento, dismorfias, CNS), tabaco (restrição crescimento, placenta prévia, descolamento), drogas ilícitas</li>
+                                <li><strong>Radiação:</strong> &gt;5 rad (50mGy) aumenta risco de malformações, retardo mental</li>
+                            </ul>
                         </div>
                         
-                        <h4>Objetivos do Acompanhamento:</h4>
+                        <h4>Desenvolvimento Fetal por Semana:</h4>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Semana</th>
+                                    <th>Desenvolvimento</th>
+                                    <th>Tamanho/Peso</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>4-5</strong></td>
+                                    <td>Formação do tubo neural, coração primitivo, início circulação</td>
+                                    <td>2-3 mm</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>6</strong></td>
+                                    <td>Batimentos cardíacos visíveis ao US, brotos dos membros, vesículas ópticas</td>
+                                    <td>4-5 mm</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>7</strong></td>
+                                    <td>Diferenciação cerebral, formação estômago, rins, pulmões</td>
+                                    <td>8-9 mm</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>8</strong></td>
+                                    <td>Dedos das mãos e pés visíveis, intestino na cavidade abdominal, ossificação inicia</td>
+                                    <td>13-15 mm</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>9-10</strong></td>
+                                    <td>Órgãos genitais externos indiferenciados, movimento fetal (não percebido), palato se fecha</td>
+                                    <td>30-40 mm, 5 g</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>11-13</strong></td>
+                                    <td>Período da translucência nucal, rins produzem urina, cordas vocais formadas</td>
+                                    <td>45-75 mm, 15-25 g</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        
+                        <h4>Sintomas Maternos Comuns:</h4>
                         <ul>
-                            <li>Confirmação da vitalidade e datação fetal</li>
-                            <li>Rastreamento de anomalias cromossômicas (translucência nucal + bioquímico)</li>
-                            <li>Controle de sintomas (náuseas, vômitos)</li>
-                            <li>Avaliação de condições maternas preexistentes</li>
-                            <li>Orientações sobre alimentação, atividade física, medicamentos seguros</li>
+                            <li><strong>Náuseas e vômitos:</strong> 50-90% das gestantes, pico 9-16 semanas, geralmente resolvem até 20 semanas</li>
+                            <li><strong>Fadiga:</strong> Aumento da progesterona, metabolismo acelerado</li>
+                            <li><strong>Mastalgia:</strong> Aumento da vascularização e preparação glandular</li>
+                            <li><strong>Polaciúria:</strong> Pressão uterina sobre a bexiga, aumento do fluxo renal</li>
+                            <li><strong>Alterações emocionais:</strong> Labilidade emocional, ansiedade, alterações do sono</li>
                         </ul>
                     </div>
                     
                     <div class="timeline-item">
                         <h3>Segundo Trimestre (14ª a 27ª semana)</h3>
-                        <p><strong>Período de menor incidência de complicações</strong>. A gestante geralmente se sente melhor, com desaparecimento dos sintomas do primeiro trimestre. Período de <strong>aceleração do crescimento fetal</strong> e maturação de órgãos. A gestante começa a perceber os movimentos fetais (primigesta: 18-20 semanas; multípara: 16-18 semanas).</p>
+                        <p><strong>Período de crescimento e maturação fetal</strong>. Risco reduzido de malformações maiores. A gestante geralmente se sente melhor ("período de lua de mel").</p>
                         
-                        <div class="highlight-box">
-                            <h3><i class="fas fa-ultra"></i> Ultrassom Morfológico de Segundo Trimestre</h3>
-                            <p><strong>Período ideal:</strong> 20-24 semanas. Avaliação detalhada da anatomia fetal:</p>
+                        <h4>Desenvolvimento Fetal por Semana:</h4>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Semana</th>
+                                    <th>Desenvolvimento</th>
+                                    <th>Tamanho/Peso</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>14-16</strong></td>
+                                    <td>Movimentos fetais ativos (primituras sentem ~18-20 semanas), sexo visível ao US, cabelo aparece</td>
+                                    <td>12-15 cm, 100-150 g</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>17-20</strong></td>
+                                    <td>Vernix caseosa cobre a pele, intestino acumula mecônio, sistema auditivo funcional</td>
+                                    <td>20-25 cm, 250-300 g</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>21-24</strong></td>
+                                    <td>Sobrancelhas e cílios visíveis, pulmões começam a produzir surfactante, período de viabilidade (a partir de 24 semanas)</td>
+                                    <td>28-30 cm, 500-600 g</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>25-27</strong></td>
+                                    <td>Abertura das narinas, reflexo de preensão presente, movimentos respiratórios irregulares</td>
+                                    <td>32-35 cm, 800-900 g</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        
+                        <div class="info-box">
+                            <h3><i class="fas fa-ultra"></i> Ultrassom Morfológico de Segundo Trimestre (20-24 semanas)</h3>
+                            <p><strong>Objetivos:</strong> Avaliação detalhada da anatomia fetal, rastreamento de malformações, avaliação do crescimento, localização placentária, volume de líquido amniótico.</p>
+                            
+                            <p><strong>Estruturas avaliadas:</strong></p>
                             <ul>
-                                <li><strong>Sistema nervoso central:</strong> Ventrículos cerebrais, cerebelo, fossa posterior</li>
-                                <li><strong>Face:</strong> Lábios, nariz, órbitas, perfil</li>
-                                <li><strong>Tórax:</strong> Coração (4 câmaras, saídas dos grandes vasos), pulmões</li>
-                                <li><strong>Abdômen:</strong> Estômago, rins, bexiga, parede abdominal</li>
-                                <li><strong>Coluna vertebral:</strong> Integridade, alinhamento</li>
-                                <li><strong>Extremidades:</strong> Ossos longos, mãos, pés</li>
-                                <li><strong>Placenta:</strong> Localização, maturidade</li>
-                                <li><strong>Líquido amniótico:</strong> Volume (Índice de líquido amniótico)</li>
+                                <li><strong>Cabeça:</strong> Forma, integridade óssea, ventrículos cerebrais, cerebelo, fossa posterior</li>
+                                <li><strong>Face:</strong> Órbitas, lábios, nariz, perfil, mandíbula</li>
+                                <li><strong>Coluna:</strong> Integridade, alinhamento, cobertura cutânea</li>
+                                <li><strong>Tórax:</strong> Pulmões, diafragma, coração (4 câmaras, saída dos grandes vasos, ritmo)</li>
+                                <li><strong>Abdome:</strong> Estômago, rins, bexiga, parede abdominal (inserção do cordão), intestino</li>
+                                <li><strong>Extremidades:</strong> Presença, medidas, movimentos, mãos e pés</li>
+                                <li><strong>Anexos:</strong> Placenta (localização, maturidade), cordão umbilical (3 vasos), líquido amniótico (índice entre 8-18 cm)</li>
                             </ul>
+                            
+                            <p><strong>Marcadores de aneuploidia:</strong> Focos ecogênicos intracardíacos, pieléctase, fêmur/úmero curto, prega nucal aumentada, cisterna magna aumentada.</p>
                         </div>
                         
-                        <h4>Objetivos do Acompanhamento:</h4>
+                        <h4>Sintomas Maternos Comuns:</h4>
                         <ul>
-                            <li>Avaliação morfológica fetal detalhada</li>
-                            <li>Rastreamento de diabetes gestacional (24-28 semanas)</li>
-                            <li>Monitoramento do crescimento fetal (altura uterina)</li>
-                            <li>Prevenção de parto prematuro (identificação de fatores de risco)</li>
-                            <li>Orientação sobre preparação para o parto e amamentação</li>
+                            <li><strong>Movimentos fetais percebidos:</strong> Primigestas 18-20 semanas, multíparas 16-18 semanas</li>
+                            <li><strong>Aumento do apetite e ganho de peso:</strong> Ganho ideal: 0.4-0.5 kg/semana</li>
+                            <li><strong>Dor ligamentar redonda:</strong> Dor em faca ou pontada nos flancos, especialmente com mudanças de posição</li>
+                            <li><strong>Congestão nasal e epistaxe:</strong> Aumento da vascularização mucosa</li>
+                            <li><strong>Linea nigra e cloasma:</strong> Hiperpigmentão por aumento do MSH</li>
                         </ul>
                     </div>
                     
                     <div class="timeline-item">
                         <h3>Terceiro Trimestre (28ª a 40ª semana)</h3>
-                        <p><strong>Período de crescimento fetal acelerado</strong> e preparação para o parto. Aumento da vigilância para condições como pré-eclâmpsia, diabetes gestacional descompensado, restrição de crescimento fetal e oligoidrâmnio. A gestante pode apresentar desconfortos como dor lombar, edema de membros inferiores, dispneia, pirose e insônia.</p>
+                        <p><strong>Período de crescimento fetal acelerado</strong> e preparação para o parto. Aumento da vigilância para complicações.</p>
+                        
+                        <h4>Desenvolvimento Fetal por Semana:</h4>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Semana</th>
+                                    <th>Desenvolvimento</th>
+                                    <th>Tamanho/Peso</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>28-31</strong></td>
+                                    <td>Abertura e fechamento dos olhos, gordura subcutânea se acumula, reflexos de sucção e deglutição presentes</td>
+                                    <td>37-40 cm, 1200-1500 g</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>32-35</strong></td>
+                                    <td>Unhas alcançam pontas dos dedos, testículos descendo (masculino), surfactante adequado (a partir de 34 semanas)</td>
+                                    <td>42-45 cm, 1800-2200 g</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>36-40</strong></td>
+                                    <td>Ganho de peso acelerado (200-300 g/semana), lanugem desaparece, vernix mais espesso, maturidade pulmonar completa (a partir de 37 semanas)</td>
+                                    <td>48-52 cm, 2800-3500 g</td>
+                                </tr>
+                            </tbody>
+                        </table>
                         
                         <div class="warning-box">
-                            <h3><i class="fas fa-heartbeat"></i> Vigilância Intensificada</h3>
-                            <p>A partir de 28 semanas, aumento da frequência das consultas para detecção precoce de:</p>
+                            <h3><i class="fas fa-exclamation-triangle"></i> Complicações do Terceiro Trimestre</h3>
                             <ul>
-                                <li><strong>Pré-eclâmpsia:</strong> Pressão arterial ≥140/90 mmHg + proteinúria ≥300mg/24h</li>
-                                <li><strong>Restrição de crescimento fetal:</strong> Altura uterina menor que o esperado para IG, confirmação por ultrassom</li>
-                                <li><strong>Diabetes gestacional descompensado:</strong> Glicemias acima das metas</li>
-                                <li><strong>Corioamnionite:</strong> Febre, taquicardia materna e fetal, dor uterina, corrimento fétido</li>
-                                <li><strong>Ameaça de parto prematuro:</strong> Contrações regulares + alterações cervicais antes de 37 semanas</li>
+                                <li><strong>Pré-eclâmpsia:</strong> Após 20 semanas, PA ≥140/90 + proteinúria ≥300mg/24h</li>
+                                <li><strong>Restrição de crescimento fetal (RCF):</strong> Peso fetal &lt;10º percentil para IG. RCF assimétrica (cabeça preservada) vs simétrica (proporcional)</li>
+                                <li><strong>Diabetes gestacional descompensado:</strong> Glicemias acima das metas (jejum ≤95, pós-prandial 1h ≤140)</li>
+                                <li><strong>Trabalho de parto prematuro:</strong> Contrações regulares + modificação cervical antes de 37 semanas</li>
+                                <li><strong>Ruptura prematura de membranas:</strong> Perda de líquido amniótico antes do início do trabalho de parto</li>
+                                <li><strong>Colestase obstétrica:</strong> Prurido intenso + elevação de ácidos biliares (&gt;10 µmol/L)</li>
+                                <li><strong>Placenta prévia/descolamento:</strong> Sangramento vaginal indolor (prévia) ou doloroso (descolamento)</li>
                             </ul>
                         </div>
                         
-                        <h4>Objetivos do Acompanhamento:</h4>
+                        <h4>Sintomas Maternos Comuns:</h4>
                         <ul>
-                            <li>Monitoramento do bem-estar fetal (movimentação, cardiotocografia se indicado)</li>
-                            <li>Avaliação da apresentação fetal (cefálica, pélvica, transversa)</li>
-                            <li>Preparação para o parto (escolha da via, plano de parto, analgesia)</li>
-                            <li>Pesquisa de Streptococcus do grupo B (35-37 semanas)</li>
-                            <li>Orientação sobre sinais de trabalho de parto e quando procurar hospital</li>
+                            <li><strong>Fadiga e dispneia:</strong> Útero elevado comprime diafragma</li>
+                            <li><strong>Edema de membros inferiores:</strong> Fisiológico se simétrico, sem proteinúria, sem hipertensão</li>
+                            <li><strong>Contrações de Braxton-Hicks:</strong> Irregulares, indolores, não progressivas</li>
+                            <li><strong>Dor pélvica e lombar:</strong> Relaxina provoca frouxidão ligamentar</li>
+                            <li><strong>Pirose e refluxo:</strong> Compressão gástrica, relaxamento do esfíncter esofágico inferior</li>
+                            <li><strong>Insônia:</strong> Desconforto, polaciúria, ansiedade</li>
                         </ul>
                     </div>
                 </div>
                 
-                <h3>Frequência das Consultas Pré-Natais</h3>
+                <h3>Ganho de Peso Gestacional Recomendado (IOM 2009)</h3>
                 <table>
                     <thead>
                         <tr>
-                            <th>Período Gestacional</th>
-                            <th>Frequência Ideal</th>
-                            <th>Foco Principal</th>
-                            <th>Exames/Procedimentos de Rotina</th>
+                            <th>IMC Pré-Gestacional</th>
+                            <th>Categoria</th>
+                            <th>Ganho Total (kg)</th>
+                            <th>Ganho no 2º-3º Trim (kg/semana)</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td><strong>Até 28 semanas</strong></td>
-                            <td>Mensal</td>
-                            <td>Rastreamento de condições, orientações gerais, controle de sintomas</td>
-                            <td>Medição de PA, peso, altura uterina, ausculta de BCF. Hemograma, urina a cada consulta.</td>
+                            <td>&lt;18.5</td>
+                            <td>Baixo peso</td>
+                            <td>12.5-18</td>
+                            <td>0.51 (0.44-0.58)</td>
                         </tr>
                         <tr>
-                            <td><strong>28 a 36 semanas</strong></td>
-                            <td>Quinzenal</td>
-                            <td>Monitoramento de crescimento fetal, prevenção de parto prematuro, rastreamento de pré-eclâmpsia</td>
-                            <td>Avaliação de edema, reflexos, exame de urina para proteinúria. Ultrassom de crescimento em gestações de risco.</td>
+                            <td>18.5-24.9</td>
+                            <td>Peso normal</td>
+                            <td>11.5-16</td>
+                            <td>0.42 (0.35-0.50)</td>
                         </tr>
                         <tr>
-                            <td><strong>37 semanas até o parto</strong></td>
-                            <td>Semanal</td>
-                            <td>Avaliação de bem-estar fetal, preparação para parto, identificação de sinais de trabalho de parto</td>
-                            <td>Tacto vaginal para avaliação cervical (se indicado), cardiotocografia (se indicado), orientação sobre sinais de alerta.</td>
+                            <td>25.0-29.9</td>
+                            <td>Sobrepeso</td>
+                            <td>7-11.5</td>
+                            <td>0.28 (0.23-0.33)</td>
+                        </tr>
+                        <tr>
+                            <td>≥30.0</td>
+                            <td>Obesidade</td>
+                            <td>5-9</td>
+                            <td>0.22 (0.17-0.27)</td>
                         </tr>
                     </tbody>
                 </table>
+                
+                <div class="important-note">
+                    <h4><i class="fas fa-balance-scale"></i> Distribuição do Ganho de Peso</h4>
+                    <ul>
+                        <li><strong>Feto:</strong> 3.0-3.5 kg</li>
+                        <li><strong>Placenta:</strong> 0.5-1.0 kg</li>
+                        <li><strong>Líquido amniótico:</strong> 0.5-1.0 kg</li>
+                        <li><strong>Útero:</strong> 0.5-1.0 kg</li>
+                        <li><strong>Mamas:</strong> 0.5-1.0 kg</li>
+                        <li><strong>Volume sanguíneo:</strong> 1.5-2.0 kg</li>
+                        <li><strong>Depósitos de gordura:</strong> 2.5-4.0 kg</li>
+                        <li><strong>Líquido extracelular:</strong> 1.5-2.0 kg</li>
+                        <li><strong>TOTAL:</strong> 11-16 kg (peso normal)</li>
+                    </ul>
+                </div>
             </section>
             
-            <!-- Seção 3: Medicamentos -->
+            <!-- Seção 4: Medicamentos -->
             <section id="medicamentos" class="section">
-                <h2><i class="fas fa-pills"></i> Medicamentos e Tratamentos na Gestação</h2>
-                <p>O uso de medicamentos na gestação requer avaliação cuidadosa do risco-benefício, considerando a classificação de risco fetal. A automedicação deve ser rigorosamente evitada. A FDA classifica os medicamentos em categorias A, B, C, D e X.</p>
+                <h2><i class="fas fa-pills"></i> Medicamentos na Gestação</h2>
                 
-                <div class="highlight-box">
-                    <h3><i class="fas fa-capsules"></i> Exemplo Clínico: Torção/Dor Muscular na Gestação</h3>
-                    <p><strong>Cenário:</strong> Gestante de 24 semanas, com torção de tornozelo após tropeçar. Edema local, dor à movimentação (escala 7/10), sem instabilidade articular. Como abordar?</p>
-                    
-                    <p><strong>Abordagem passo a passo:</strong></p>
-                    <ol>
-                        <li><strong>Avaliação inicial:</strong> Excluir fratura (critérios de Ottawa para tornozelo), avaliar circulação, sensibilidade e movimentação distal.</li>
-                        <li><strong>Medidas não farmacológicas:</strong> Repouso relativo, elevação do membro, compressas frias (15-20 minutos a cada 2-3 horas nas primeiras 48h), imobilização com tornozeleira elástica.</li>
-                        <li><strong>Fisioterapia precoce:</strong> Após 48h, iniciar mobilização suave, alongamentos, exercícios de fortalecimento progressivo.</li>
-                        <li><strong>Analgesia farmacológica:</strong> Se dor moderada a intensa, considerar medicação segura na gestação.</li>
-                    </ol>
+                <p>O uso de medicamentos na gestação requer avaliação cuidadosa do risco-benefício. A classificação da FDA (Food and Drug Administration) categoriza os medicamentos conforme o risco fetal:</p>
+                
+                <div class="info-box">
+                    <h3><i class="fas fa-capsules"></i> Classificação FDA de Medicamentos na Gestação</h3>
+                    <ul>
+                        <li><strong>Categoria A:</strong> Estudos adequados e controlados não demonstraram risco fetal no 1º trimestre (ex: ácido fólico, levotiroxina)</li>
+                        <li><strong>Categoria B:</strong> Estudos em animais não demonstraram risco, mas não há estudos controlados em gestantes, OU estudos em animais mostraram risco não confirmado em gestantes (ex: paracetamol, metformina, penicilinas)</li>
+                        <li><strong>Categoria C:</strong> Estudos em animais demonstraram risco fetal, não há estudos controlados em gestantes, OU não há estudos disponíveis. Benefício pode justificar risco (ex: fluconazol, corticoides, antidepressivos tricíclicos)</li>
+                        <li><strong>Categoria D:</strong> Evidência de risco fetal humano, mas benefícios podem justificar uso em situações de risco de vida (ex: fenitoína, valproato, lítio)</li>
+                        <li><strong>Categoria X:</strong> Estudos em animais ou humanos demonstraram anomalias fetais. Contraindicado na gestação (ex: isotretinoína, talidomida, warfarina no 1º trimestre)</li>
+                    </ul>
                 </div>
                 
-                <h3>Analgésicos na Gestação - Posologia e Precauções</h3>
+                <h3>Exemplo Clínico: Torção/Dor Musculoesquelética</h3>
+                <p><strong>Cenário:</strong> Gestante de 26 semanas com torção de tornozelo grau I (estiramento ligamentar sem instabilidade). Edema moderado, dor à deambulação (6/10).</p>
+                
+                <div class="warning-box">
+                    <h3><i class="fas fa-band-aid"></i> Abordagem Terapêutica para Torção na Gestação</h3>
+                    <p><strong>Medidas não farmacológicas (PRICE):</strong></p>
+                    <ol>
+                        <li><strong>Proteção:</strong> Evitar apoio completo, uso de muletas se necessário</li>
+                        <li><strong>Repouso:</strong> Relativo por 24-48h, elevação do membro</li>
+                        <li><strong>Gelo:</strong> 15-20 minutos a cada 2-3 horas (primeiras 48h)</li>
+                        <li><strong>Compressão:</strong> Bandagem elástica (não muito apertada)</li>
+                        <li><strong>Elevação:</strong> Membro acima do nível do coração</li>
+                    </ol>
+                    
+                    <p><strong>Fisioterapia precoce:</strong> Iniciar após 48h com alongamentos suaves, exercícios de amplitude de movimento, fortalecimento progressivo, propriocepção.</p>
+                </div>
+                
+                <h3>Analgésicos na Gestação</h3>
                 
                 <div class="medication-card">
                     <h4><i class="fas fa-tablets"></i> Paracetamol (Acetaminofeno) - Categoria B</h4>
+                    <p><strong>Mecanismo:</strong> Inibição central da ciclooxigenase (COX), fraco efeito periférico.</p>
                     <p><strong>Indicação:</strong> Analgesia de primeira linha para dor leve a moderada na gestação.</p>
-                    <p><strong>Posologia:</strong> 500-1000mg a cada 6-8 horas. Dose máxima: 4g/dia.</p>
-                    <p><strong>Mecanismo:</strong> Inibição central da COX, efeito antipirético e analgésico.</p>
+                    <p><strong>Posologia:</strong> 500-1000mg a cada 6-8 horas. <strong>Dose máxima: 4g/dia</strong>.</p>
                     <p><strong>Considerações:</strong> 
                         <span class="pill">Medicamento mais seguro</span>
                         <span class="pill">Primeira escolha</span>
                         <span class="pill">Evitar uso crônico</span>
                     </p>
-                    <p><strong>Precauções:</strong> Uso prolongado (>3 dias/semana) associado a maior risco de transtorno do déficit de atenção e hiperatividade (TDAH) em crianças. Monitorar função hepática se uso prolongado.</p>
+                    <p><strong>Precauções:</strong> Uso prolongado (&gt;3 dias/semana) associado a maior risco de transtorno do déficit de atenção e hiperatividade (TDAH) e transtorno do espectro autista (TEA) em crianças. Monitorar função hepática se uso prolongado. Evitar em pacientes com hepatopatia.</p>
                 </div>
                 
                 <div class="medication-card warning">
                     <h4><i class="fas fa-prescription-bottle-alt"></i> Dipirona (Metamizol) - Categoria C</h4>
-                    <p><strong>Indicação:</strong> Dor moderada a intensa quando paracetamol é insuficiente.</p>
-                    <p><strong>Posologia:</strong> 500mg a cada 6 horas. Dose máxima: 2g/dia.</p>
                     <p><strong>Mecanismo:</strong> Inibição não seletiva da COX, efeito analgésico, antipirético e antiespasmódico.</p>
+                    <p><strong>Indicação:</strong> Dor moderada a intensa quando paracetamol é insuficiente, cólica renal/biliar.</p>
+                    <p><strong>Posologia:</strong> 500mg a cada 6-8 horas. <strong>Dose máxima: 2g/dia</strong>.</p>
                     <p><strong>Considerações:</strong> 
                         <span class="pill">Evitar no 1º trimestre</span>
                         <span class="pill">Uso pontual</span>
                         <span class="pill">Contraindicado próximo ao parto</span>
                     </p>
-                    <p><strong>Precauções:</strong> Evitar no primeiro trimestre (possível associação com gastrosquise). Evitar uso próximo ao parto (risco de agranulocitose neonatal). Evitar em pacientes com história de alergia a pirazolonas.</p>
+                    <p><strong>Precauções:</strong> Evitar no primeiro trimestre (possível associação com gastrosquise). Evitar uso próximo ao parto (risco de agranulocitose neonatal). Evitar em pacientes com história de alergia a pirazolonas, asma, porfiria. Monitorar hemograma se uso prolongado.</p>
                 </div>
                 
                 <div class="medication-card danger">
                     <h4><i class="fas fa-exclamation-triangle"></i> Ibuprofeno (AINEs) - Categoria C (D no 3º trimestre)</h4>
-                    <p><strong>Indicação:</strong> Dor inflamatória aguda, uso pontual e limitado.</p>
-                    <p><strong>Posologia:</strong> 200-400mg a cada 8 horas. Uso máximo: 5 dias.</p>
                     <p><strong>Mecanismo:</strong> Inibição não seletiva da COX-1 e COX-2, efeito anti-inflamatório, analgésico e antipirético.</p>
+                    <p><strong>Indicação:</strong> Dor inflamatória aguda, uso pontual e limitado.</p>
+                    <p><strong>Posologia:</strong> 200-400mg a cada 8 horas. <strong>Uso máximo: 5 dias</strong>.</p>
                     <p><strong>Considerações:</strong> 
                         <span class="pill">Contraindicado após 30 semanas</span>
                         <span class="pill">Risco de oligoidrâmnio</span>
                         <span class="pill">Fechamento do ducto arterial</span>
                     </p>
-                    <p><strong>Contraindicações absolutas:</strong> Após 30 semanas de gestação (risco de fechamento precoce do ducto arterial, oligoidrâmnio, hipertensão pulmonar neonatal). Evitar em pacientes com risco de sangramento, doença renal, úlcera péptica.</p>
+                    <p><strong>Contraindicações absolutas:</strong> Após 30 semanas de gestação (risco de fechamento precoce do ducto arterial, oligoidrâmnio, hipertensão pulmonar neonatal). Evitar em pacientes com risco de sangramento, doença renal, úlcera péptica, asma por AINEs.</p>
+                    <p><strong>Mecanismo de toxicidade fetal:</strong> Inibição da síntese de prostaglandinas → vasoconstrição do ducto arterial, redução do fluxo renal fetal → oligoidrâmnio, necrose tubular renal.</p>
                 </div>
                 
                 <div class="medication-card warning">
                     <h4><i class="fas fa-prescription"></i> Codeína (Opioide fraco) - Categoria C</h4>
+                    <p><strong>Mecanismo:</strong> Agonista opioide μ, metabolizado em morfina no fígado (CYP2D6).</p>
                     <p><strong>Indicação:</strong> Dor intensa refratária a outros analgésicos, uso limitado e supervisionado.</p>
-                    <p><strong>Posologia:</strong> 30mg a cada 6 horas. Uso máximo: 3 dias.</p>
-                    <p><strong>Mecanismo:</strong> Agonista opioide μ, metabolizado em morfina no fígado.</p>
+                    <p><strong>Posologia:</strong> 30mg a cada 6 horas. <strong>Uso máximo: 3 dias</strong>.</p>
                     <p><strong>Considerações:</strong> 
                         <span class="pill">Uso restrito</span>
                         <span class="pill">Risco de depressão respiratória</span>
                         <span class="pill">Síndrome de abstinência</span>
                     </p>
-                    <p><strong>Precauções:</strong> Evitar uso prolongado (risco de depressão respiratória neonatal e síndrome de abstinência). Contraindicado em mães metabolizadoras ultrarrápidas CYP2D6 (maior conversão para morfina). Monitorar sinais de toxicidade neonatal (letargia, dificuldade de alimentação).</p>
+                    <p><strong>Precauções:</strong> Evitar uso prolongado (risco de depressão respiratória neonatal e síndrome de abstinência). Contraindicado em mães metabolizadoras ultrarrápidas CYP2D6 (maior conversão para morfina). Monitorar sinais de toxicidade neonatal (letargia, dificuldade de alimentação, depressão respiratória). Preferir formulações sem associação (codeína pura).</p>
                 </div>
                 
-                <h3>Tratamento Não-Farmacológico para Torções/Dores Musculoesqueléticas</h3>
+                <h3>Antibióticos na Gestação</h3>
                 <table>
                     <thead>
                         <tr>
-                            <th>Intervenção</th>
-                            <th>Protocolo</th>
-                            <th>Evidência</th>
+                            <th>Antibiótico</th>
+                            <th>Categoria</th>
+                            <th>Indicações</th>
+                            <th>Precauções</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td><strong>Repouso relativo</strong></td>
-                            <td>Evitar atividades que agravem a dor por 24-48h. Retorno gradual às atividades.</td>
-                            <td>Reduz edema e dor aguda. Evita atrofia muscular por imobilização prolongada.</td>
+                            <td><strong>Penicilinas</strong> (Amoxicilina, Ampicilina)</td>
+                            <td>B</td>
+                            <td>Infecções bacterianas comuns, profilaxia GBS, ITU</td>
+                            <td>Alergia (5-10%), diarreia, candidíase</td>
                         </tr>
                         <tr>
-                            <td><strong>Gelo (Crioterapia)</strong></td>
-                            <td>Compressas frias por 15-20 minutos, 3-4 vezes/dia (primeiras 48-72h). Proteger pele com toalha fina.</td>
-                            <td>Vasoconstrição, redução do metabolismo tecidual, analgesia, redução de edema.</td>
+                            <td><strong>Cefalosporinas</strong> (Cefalexina, Ceftriaxona)</td>
+                            <td>B</td>
+                            <td>Alternativa à penicilina, ITU, pielonefrite, infecções graves</td>
+                            <td>Alergia cruzada com penicilina (1-10%), diarreia</td>
                         </tr>
                         <tr>
-                            <td><strong>Compressão</strong></td>
-                            <td>Bandagem elástica ou meia de compressão. Aplicar distal para proximal. Não muito apertado.</td>
-                            <td>Reduz edema, fornece suporte mecânico, melhora propriocepção.</td>
+                            <td><strong>Eritromicina/Azitromicina</strong></td>
+                            <td>B</td>
+                            <td>Alergia à penicilina, infecções genitais (clamídia), pneumonia</td>
+                            <td>Náuseas, vômitos, prolongamento do QT</td>
                         </tr>
                         <tr>
-                            <td><strong>Elevação</strong></td>
-                            <td>Membro acima do nível do coração sempre que possível, especialmente nas primeiras 48h.</td>
-                            <td>Facilita drenagem linfática e venosa, reduz edema.</td>
+                            <td><strong>Clindamicina</strong></td>
+                            <td>B</td>
+                            <td>Alergia à penicilina, infecções anaeróbias, profilaxia GBS</td>
+                            <td>Colite pseudomembranosa (risco 0.1-10%)</td>
                         </tr>
                         <tr>
-                            <td><strong>Fisioterapia precoce</strong></td>
-                            <td>Iniciar após fase aguda (48-72h). Alongamentos suaves, fortalecimento progressivo, propriocepção.</td>
-                            <td>Previne rigidez, atrofia muscular, acelera recuperação funcional.</td>
+                            <td><strong>Nitrofurantoína</strong></td>
+                            <td>B</td>
+                            <td>ITU não complicada, cistite</td>
+                            <td>Evitar no 3º trimestre (risco de anemia hemolítica neonatal), náuseas</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Sulfametoxazol-Trimetoprim</strong></td>
+                            <td>C (D no 3º trimestre)</td>
+                            <td>ITU, pneumonia por Pneumocystis</td>
+                            <td>Evitar no 1º trimestre (defeitos do tubo neural), 3º trimestre (kernicterus)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Quinolonas</strong> (Ciprofloxacino)</td>
+                            <td>C</td>
+                            <td>ITU complicada, pielonefrite</td>
+                            <td>Evitar no 1º trimestre (artropatia em animais), risco de ruptura tendão</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Aminoglicosídeos</strong> (Gentamicina)</td>
+                            <td>C (D se uso prolongado)</td>
+                            <td>Infecções graves (sepse, pielonefrite), profilaxia cirúrgica</td>
+                            <td>Nefrotoxicidade, ototoxicidade (monitorar níveis séricos)</td>
                         </tr>
                     </tbody>
                 </table>
+                
+                <h3>Medicamentos Contraindicados na Gestação (Categoria X)</h3>
+                <div class="danger-box">
+                    <ul>
+                        <li><strong>Isotretinoína:</strong> Teratogênico potente (anencefalia, hidrocefalia, cardiopatias, fenda palatina). Contraindicada absolutamente. Necessária contracepção eficaz por 1 mês antes, durante e 1 mês após tratamento.</li>
+                        <li><strong>Talidomida:</strong> Focomelia, amelia, anomalias cardíacas, renais, intestinais. Uso restrito a doenças específicas (lúpus, mieloma) com programa de controle rigoroso.</li>
+                        <li><strong>Warfarina:</strong> Embriopatia da warfarina (1º trimestre): hipoplasia nasal, estrias ósseas, atrofia óptica, retardo mental. Hemorragia fetal (2º-3º trimestres). Substituir por heparina de baixo peso molecular.</li>
+                        <li><strong>Misoprostol:</strong> Aumento do risco de defeitos do tubo neural, anomalias craniofaciais, síndrome de Möbius (paralisia facial).</li>
+                        <li><strong>Metotrexato:</strong> Aborto, defeitos do tubo neural, anomalias craniofaciais, dos membros. Evitar por 3 meses após descontinuar.</li>
+                        <li><strong>Finasterida/Dutasterida:</strong> Feminilização de fetos masculinos (hipospádia). Contraindicada em gestantes (absorção cutânea possível).</li>
+                        <li><strong>Estatinas:</strong> Contraindicadas (embora evidência recente questiona o risco).</li>
+                    </ul>
+                </div>
             </section>
             
-            <!-- Seção 4: Exames -->
+            <!-- Seção 5: Exames -->
             <section id="exames" class="section">
-                <h2><i class="fas fa-microscope"></i> Exames Específicos na Gestação</h2>
-                <p>O acompanhamento pré-natal inclui uma série de exames laboratoriais e de imagem padronizados por diretrizes nacionais e internacionais. Conhecer a indicação, interpretação e limitações de cada exame é fundamental para conduta adequada.</p>
+                <h2><i class="fas fa-microscope"></i> Exames na Gestação</h2>
                 
-                <h3>Exames de Rotina por Trimestre</h3>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Trimestre</th>
-                            <th>Exames Obrigatórios (Ministério da Saúde)</th>
-                            <th>Exames Condicionais/Indicados</th>
-                            <th>Período Ideal</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>1º Trimestre</strong></td>
-                            <td>
-                                <ul>
-                                    <li>Hemograma completo</li>
-                                    <li>Glicemia de jejum</li>
-                                    <li>Sorologias: HIV, sífilis (VDRL), hepatite B (HBsAg), hepatite C (anti-HCV)</li>
-                                    <li>Urina tipo I + urocultura</li>
-                                    <li>Tipagem sanguínea ABO e Rh</li>
-                                    <li>Ultrassom transvaginal/abdominal</li>
-                                </ul>
-                            </td>
-                            <td>
-                                <ul>
-                                    <li>Toxoplasmose (IgG e IgM)</li>
-                                    <li>Rubéola (IgG)</li>
-                                    <li>TSH e T4 livre</li>
-                                    <li>Citomegalovírus (IgG e IgM)</li>
-                                    <li>Teste combinado (translucência nucal + PAPP-A + β-hCG livre)</li>
-                                    <li>Vitamina D</li>
-                                </ul>
-                            </td>
-                            <td>Primeira consulta até 13 semanas</td>
-                        </tr>
-                        <tr>
-                            <td><strong>2º Trimestre</strong></td>
-                            <td>
-                                <ul>
-                                    <li>Hemograma</li>
-                                    <li>Teste de tolerância à glicose 75g (24-28 semanas)</li>
-                                    <li>Ultrassom morfológico (20-24 semanas)</li>
-                                    <li>Urina tipo I</li>
-                                </ul>
-                            </td>
-                            <td>
-                                <ul>
-                                    <li>Amniocentese (se rastreamento positivo)</li>
-                                    <li>Ecocardiografia fetal (se indicado)</li>
-                                    <li>Doppler das artérias uterinas (para risco de pré-eclâmpsia)</li>
-                                    <li>Pesquisa de hemoglobinopatias (eletroforese de hemoglobina)</li>
-                                </ul>
-                            </td>
-                            <td>14-27 semanas</td>
-                        </tr>
-                        <tr>
-                            <td><strong>3º Trimestre</strong></td>
-                            <td>
-                                <ul>
-                                    <li>Hemograma</li>
-                                    <li>Urina tipo I</li>
-                                    <li>Sorologias: HIV e sífilis (repetir)</li>
-                                    <li>Pesquisa de Streptococcus do grupo B (35-37 semanas)</li>
-                                    <li>Ultrassom com doppler (após 28 semanas)</li>
-                                </ul>
-                            </td>
-                            <td>
-                                <ul>
-                                    <li>Perfil biofísico fetal</li>
-                                    <li>Cardiotocografia</li>
-                                    <li>Culturas específicas (se sintomas)</li>
-                                    <li>Teste de Coombs indireto (Rh negativo)</li>
-                                    <li>Ultrassom transvaginal para medição de colo (risco de parto prematuro)</li>
-                                </ul>
-                            </td>
-                            <td>28-40 semanas</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <p>O acompanhamento pré-natal inclui exames de rotina e específicos, com objetivos e períodos ideais de realização.</p>
                 
-                <div class="highlight-box">
-                    <h3><i class="fas fa-vial"></i> Teste de Tolerância à Glicose (TTG-75g) - Padrão Ouro</h3>
-                    <p><strong>Indicação:</strong> Rastreamento universal de diabetes gestacional entre 24-28 semanas. Em casos de alto risco (obesidade, história familiar, diabetes gestacional anterior, macrossomia prévia), realizar na primeira consulta e repetir em 24-28 semanas se normal inicialmente.</p>
+                <h3>Exames por Trimestre</h3>
+                
+                <div class="info-box">
+                    <h3><i class="fas fa-calendar-check"></i> Cronograma de Exames na Gestação</h3>
                     
-                    <p><strong>Preparo:</strong> Jejum de 8-14 horas, dieta habitual com pelo menos 150g de carboidratos/dia nos 3 dias anteriores ao teste. Não fumar durante o teste.</p>
+                    <h4>Primeiro Trimestre (até 13 semanas):</h4>
+                    <ul>
+                        <li><strong>Hemograma completo:</strong> Avaliar anemia, plaquetopenia</li>
+                        <li><strong>Glicemia de jejum:</strong> Rastrear diabetes pré-existente</li>
+                        <li><strong>Sorologias:</strong> HIV, sífilis, hepatite B, hepatite C, toxoplasmose (IgG e IgM), rubéola (IgG)</li>
+                        <li><strong>Urina tipo I e urocultura:</strong> Pesquisar infecção urinária assintomática</li>
+                        <li><strong>Tipagem sanguínea ABO e Rh:</strong> Identificar risco de isoimunização</li>
+                        <li><strong>TSH e T4 livre:</strong> Avaliar função tireoidiana</li>
+                        <li><strong>Ultrassom transvaginal/abdominal:</strong> Confirmar IG, vitalidade, número de fetos</li>
+                        <li><strong>Teste combinado (11-14 semanas):</strong> Translucência nucal + PAPP-A + β-hCG livre (risco de trissomias)</li>
+                    </ul>
                     
-                    <p><strong>Protocolo:</strong> 
-                        <br>1. Coleta de glicemia em jejum
-                        <br>2. Administração de 75g de glicose anidra em 250-300ml de água (ingerir em 5 minutos)
-                        <br>3. Coleta de glicemia após 1 hora
-                        <br>4. Coleta de glicemia após 2 horas
-                    </p>
+                    <h4>Segundo Trimestre (14-27 semanas):</h4>
+                    <ul>
+                        <li><strong>Hemograma (24-28 semanas):</strong> Avaliar anemia, plaquetas</li>
+                        <li><strong>Teste de tolerância à glicose 75g (24-28 semanas):</strong> Rastrear diabetes gestacional</li>
+                        <li><strong>Ultrassom morfológico (20-24 semanas):</strong> Avaliação anatômica detalhada</li>
+                        <li><strong>Urina tipo I (24-28 semanas):</strong> Pesquisar proteinúria, infecção</li>
+                        <li><strong>Ecocardiografia fetal (24-26 semanas):</strong> Se indicado (diabetes, história familiar, suspeita de cardiopatia)</li>
+                        <li><strong>Pesquisa de hemoglobinopatias:</strong> Eletroforese de hemoglobina se risco aumentado</li>
+                    </ul>
                     
-                    <p><strong>Interpretação (Critérios IADPSG - International Association of Diabetes and Pregnancy Study Groups):</strong> 
-                        <br>• Jejum: ≥ 92 mg/dL (5.1 mmol/L)
-                        <br>• 1 hora: ≥ 180 mg/dL (10.0 mmol/L)  
-                        <br>• 2 horas: ≥ 153 mg/dL (8.5 mmol/L)
-                        <br><strong>Diagnóstico:</strong> 1 ou mais valores alterados
-                    </p>
-                    
-                    <p><strong>Conduta se diagnóstico confirmado:</strong> Iniciar automonitorização glicêmica (4-6x/dia), dieta com restrição de carboidratos simples, atividade física regular. Se metas não atingidas em 1-2 semanas (jejum ≤95, pós-prandial 1h ≤140 ou 2h ≤120), iniciar insulinoterapia.</p>
+                    <h4>Terceiro Trimestre (28-40 semanas):</h4>
+                    <ul>
+                        <li><strong>Hemograma (28-32 semanas):</strong> Avaliar anemia</li>
+                        <li><strong>Urina tipo I (28-32 semanas):</strong> Pesquisar proteinúria, infecção</li>
+                        <li><strong>Sorologias (HIV e sífilis):</strong> Repetir (28-32 semanas)</li>
+                        <li><strong>Ultrassom com doppler (28-32 semanas):</strong> Avaliar crescimento fetal, líquido, placenta</li>
+                        <li><strong>Pesquisa de Streptococcus do grupo B (35-37 semanas):</strong> Swab vaginal e retal</li>
+                        <li><strong>Teste de Coombs indireto (Rh negativo):</strong> 28 semanas (antes da imunoglobulina anti-D)</li>
+                        <li><strong>Cardiotocografia:</strong> Após 32 semanas se indicado (diabetes, hipertensão, RCF)</li>
+                        <li><strong>Perfil biofísico fetal:</strong> Se indicado (RCF, oligoidrâmnio, diabetes)</li>
+                    </ul>
                 </div>
                 
-                <div class="highlight-box">
-                    <h3><i class="fas fa-procedures"></i> Pesquisa de Streptococcus do Grupo B (GBS)</h3>
-                    <p><strong>Indicação:</strong> Todas as gestantes entre 35-37 semanas. Em casos de parto prematuro, trabalho de parto prematuro ou ruptura prematura de membranas antes da coleta, realizar teste rápido ou tratar empiricamente.</p>
+                <h3>Exames Específicos Detalhados</h3>
+                
+                <div class="warning-box">
+                    <h3><i class="fas fa-vial"></i> Teste de Tolerância à Glicose 75g (TTG-75g)</h3>
+                    <p><strong>Indicação:</strong> Rastreamento universal de diabetes gestacional entre 24-28 semanas.</p>
+                    
+                    <p><strong>Preparo:</strong> Jejum de 8-14 horas. Dieta habitual com pelo menos 150g de carboidratos/dia nos 3 dias anteriores. Não fumar durante o teste.</p>
+                    
+                    <p><strong>Protocolo:</strong></p>
+                    <ol>
+                        <li>Coleta de glicemia em jejum (t0)</li>
+                        <li>Administração de 75g de glicose anidra em 250-300ml de água (ingerir em 5 minutos)</li>
+                        <li>Coleta de glicemia após 1 hora (t60)</li>
+                        <li>Coleta de glicemia após 2 horas (t120)</li>
+                    </ol>
+                    
+                    <p><strong>Interpretação (Critérios IADPSG 2010):</strong></p>
+                    <ul>
+                        <li>Jejum: ≥ 92 mg/dL (5.1 mmol/L)</li>
+                        <li>1 hora: ≥ 180 mg/dL (10.0 mmol/L)</li>
+                        <li>2 horas: ≥ 153 mg/dL (8.5 mmol/L)</li>
+                    </ul>
+                    <p><strong>Diagnóstico:</strong> 1 ou mais valores alterados</p>
+                    
+                    <p><strong>Sensibilidade:</strong> 88-99% | <strong>Especificidade:</strong> 79-89%</p>
+                    
+                    <p><strong>Conduta se diagnóstico confirmado:</strong> Iniciar automonitorização glicêmica (4-6x/dia), dieta com restrição de carboidratos simples (40-45% do VET), atividade física regular. Se metas não atingidas em 1-2 semanas (jejum ≤95, pós-prandial 1h ≤140 ou 2h ≤120), iniciar insulinoterapia.</p>
+                </div>
+                
+                <div class="info-box">
+                    <h3><i class="fas fa-bacteria"></i> Pesquisa de Streptococcus do Grupo B (GBS)</h3>
+                    <p><strong>Indicação:</strong> Todas as gestantes entre 35-37 semanas.</p>
                     
                     <p><strong>Coleta:</strong> Swab da porção distal da vagina (introito vaginal) seguido do ânus (canal anal) com o mesmo swab, sem uso de espéculo. Não realizar limpeza prévia com antisséptico.</p>
                     
@@ -1024,446 +1433,672 @@
                     
                     <p><strong>Conduta se positivo:</strong> Antibioticoprofilaxia intraparto para prevenção de doença neonatal precoce por GBS (sepse, pneumonia, meningite).</p>
                     
-                    <p><strong>Regime de escolha:</strong> Penicilina G 5 milhões UI EV dose inicial, depois 2,5 milhões UI a cada 4 horas até o parto.</p>
+                    <p><strong>Regime de escolha:</strong></p>
+                    <ul>
+                        <li><strong>Penicilina G:</strong> 5 milhões UI EV dose inicial, depois 2,5 milhões UI a cada 4 horas até o parto.</li>
+                        <li><strong>Alternativas para alérgicos:</strong>
+                            <br>• Alergia não-anafilática: <strong>Cefazolina</strong> 2g EV dose inicial, depois 1g a cada 8 horas.
+                            <br>• Alergia anafilática (risco de penicilina): <strong>Clindamicina</strong> 900mg EV a cada 8 horas (se susceptível) OU <strong>Vancomicina</strong> 1g EV a cada 12 horas.
+                        </li>
+                    </ul>
                     
-                    <p><strong>Alternativas para alérgicos:</strong> 
-                        <br>• Alergia não-anafilática: Cefazolina 2g EV dose inicial, depois 1g a cada 8 horas.
-                        <br>• Alergia anafilática (risco de penicilina): Clindamicina 900mg EV a cada 8 horas OU Vancomicina 1g EV a cada 12 horas (se susceptibilidade conhecida à clindamicina).
-                    </p>
+                    <p><strong>Indicações de profilaxia mesmo sem cultura:</strong></p>
+                    <ul>
+                        <li>Parto antes de 37 semanas com status GBS desconhecido</li>
+                        <li>Rompimento de membranas ≥18 horas com status GBS desconhecido</li>
+                        <li>Temperatura intraparto ≥38°C</li>
+                        <li>História de filho anterior com doença invasiva por GBS</li>
+                        <li>Bacteriúria por GBS durante a gestação</li>
+                    </ul>
+                </div>
+                
+                <h3>Ultrassonografia Obstétrica</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Tipo</th>
+                            <th>Período</th>
+                            <th>Objetivos</th>
+                            <th>Parâmetros Avaliados</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Ultrassom de 1º trimestre</strong></td>
+                            <td>5-13 semanas</td>
+                            <td>Confirmar IG, vitalidade, número, excluir anomalias grosseiras</td>
+                            <td>CRL, saco gestacional, batimentos cardíacos, translucência nucal (11-14s)</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Ultrassom morfológico</strong></td>
+                            <td>20-24 semanas</td>
+                            <td>Avaliação anatômica detalhada, rastreamento de malformações</td>
+                            <td>Anatomia fetal completa, biometria (BPD, HC, AC, FL), líquido amniótico, placenta</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Ultrassom de 3º trimestre</strong></td>
+                            <td>28-32 semanas</td>
+                            <td>Avaliar crescimento fetal, posição, líquido, placenta</td>
+                            <td>Biometria (estimar peso fetal), apresentação, índice de líquido amniótico, localização placentária, doppler umbilical</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Ultrassom com doppler</strong></td>
+                            <td>Quando indicado</td>
+                            <td>Avaliar fluxo sanguíneo fetal, placental</td>
+                            <td>Índice de pulsatilidade (IP) da artéria umbilical, cerebral média, ducto venoso, artérias uterinas</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Perfil biofísico fetal</strong></td>
+                            <td>Após 32 semanas (se indicado)</td>
+                            <td>Avaliar bem-estar fetal</td>
+                            <td>Movimentos respiratórios, movimentos corporais, tônus, líquido amniótico, cardiotocografia (0-2 pontos cada, máximo 10)</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <h3>Exames Genéticos Pré-Natais</h3>
+                <div class="info-box">
+                    <h3><i class="fas fa-dna"></i> Testes de Rastreamento e Diagnóstico Genético</h3>
+                    
+                    <p><strong>Testes de rastreamento (não invasivos):</strong></p>
+                    <ul>
+                        <li><strong>Teste combinado do 1º trimestre (11-14 semanas):</strong> Translucência nucal + PAPP-A + β-hCG livre. Detecção de síndrome de Down: 85-90% com 5% de falsos positivos.</li>
+                        <li><strong>DNA fetal livre no sangue materno (NIPT):</strong> A partir de 10 semanas. Detecção de trissomias 21, 18, 13: &gt;99% com &lt;0.1% de falsos positivos. Pode detectar outras aneuploidias, microdeleções.</li>
+                        <li><strong>Quadruplo teste (15-22 semanas):</strong> AFP, hCG, uE3, inibina A. Detecção de síndrome de Down: 81% com 5% de falsos positivos.</li>
+                    </ul>
+                    
+                    <p><strong>Testes diagnósticos (invasivos):</strong></p>
+                    <ul>
+                        <li><strong>Biopósia de vilo corial (10-13 semanas):</strong> Risco de perda fetal: 1-2%. Diagnóstico de anomalias cromossômicas, doenças genéticas específicas.</li>
+                        <li><strong>Amniocentese (15-20 semanas):</strong> Risco de perda fetal: 0.5-1%. Diagnóstico de anomalias cromossômicas, infecções intrauterinas, doenças metabólicas.</li>
+                        <li><strong>Cordocentese (após 18 semanas):</strong> Risco de perda fetal: 1-2%. Diagnóstico de infecções, anemia fetal, cariótipo rápido.</li>
+                    </ul>
+                    
+                    <p><strong>Indicações para testes invasivos:</strong></p>
+                    <ul>
+                        <li>Idade materna ≥35 anos</li>
+                        <li>Ultrassom com marcadores de aneuploidia</li>
+                        <li>Rastreamento bioquímico positivo</li>
+                        <li>História prévia de filho com anomalia cromossômica</li>
+                        <li>Parental portador de translocação cromossômica</li>
+                        <li>Doença genética familiar conhecida</li>
+                    </ul>
                 </div>
             </section>
             
-            <!-- Seção 5: Parto -->
+            <!-- Seção 6: Parto e Puerpério -->
             <section id="parto" class="section">
-                <h2><i class="fas fa-baby"></i> Parto e Puerpério Imediato</h2>
-                <p>A assistência ao parto deve ser humanizada, segura e baseada em evidências científicas, respeitando as preferências da gestante sempre que possível. O parto normal é incentivado quando não há contraindicações, com taxas de cesárea recomendadas abaixo de 15% pela OMS.</p>
+                <h2><i class="fas fa-baby"></i> Parto e Puerpério</h2>
+                
+                <p>O parto é definido como a expulsão ou extração do concepto a partir das 20 semanas de gestação ou peso fetal ≥500g. Pode ser vaginal (espontâneo ou instrumental) ou cesáreo.</p>
                 
                 <h3>Estágios do Trabalho de Parto</h3>
+                
+                <div class="info-box">
+                    <h3><i class="fas fa-baby-carriage"></i> Fases do Trabalho de Parto</h3>
+                    
+                    <h4>1º Estágio (Dilatação):</h4>
+                    <p><strong>Fase latente:</strong> Até 4cm de dilatação. Duração variável (até 20h em primíparas, 14h em multíparas). Contrações irregulares, pouco dolorosas.</p>
+                    <p><strong>Fase ativa:</strong> De 4cm até dilatação completa (10cm). Progressão mínima: 1cm/h (primíparas) ou 1.5cm/h (multíparas). Contrações regulares (3-5/10min), dolorosas.</p>
+                    
+                    <h4>2º Estágio (Expulsivo):</h4>
+                    <p>Da dilatação completa até o nascimento fetal. Duração: até 3h (primíparas com analgesia), 2h (sem analgesia), 1h (multíparas). Caracterizado pelo desejo de puxo.</p>
+                    
+                    <h4>3º Estágio (Dequitação):</h4>
+                    <p>Do nascimento fetal até a expulsão da placenta. Duração: até 30 minutos. Conduta ativa recomendada (ocitocina após nascimento anterior, tração controlada do cordão).</p>
+                </div>
+                
+                <h3>Monitorização Fetal Intraparto</h3>
                 <table>
                     <thead>
                         <tr>
-                            <th>Estágio</th>
-                            <th>Fase</th>
-                            <th>Duração</th>
-                            <th>Características</th>
-                            <th>Conduta</th>
+                            <th>Método</th>
+                            <th>Indicações</th>
+                            <th>Vantagens</th>
+                            <th>Limitações</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td rowspan="2"><strong>1º Estágio (Dilatação)</strong></td>
-                            <td><strong>Latente</strong></td>
-                            <td>Até 20h (primíparas)<br>Até 14h (multíparas)</td>
-                            <td>Contrações irregulares, pouco dolorosas. Dilatação até 4cm. Colo apagamento &lt;100%.</td>
-                            <td>Conforto, hidratação, deambulação. Não há indicação de internação hospitalar.</td>
+                            <td><strong>Ausculta intermitente</strong></td>
+                            <td>Gestações de baixo risco, trabalho de parto ativo</td>
+                            <td>Não invasivo, permite deambulação, menor intervenção</td>
+                            <td>Não contínuo, dependente do profissional</td>
                         </tr>
                         <tr>
-                            <td><strong>Ativa</strong></td>
-                            <td>Dilatação ≥1cm/h (primíparas)<br>≥1.5cm/h (multíparas)</td>
-                            <td>Contrações regulares (3-5/10min), dolorosas. Dilatação de 4-10cm.</td>
-                            <td>Internação, monitorização materno-fetal, analgesia (se desejada), progressão do trabalho de parto.</td>
+                            <td><strong>Cardiotocografia contínua</strong></td>
+                            <td>Gestantes de alto risco, trabalho de parto com ocitocina, anestesia regional</td>
+                            <td>Monitoramento contínuo, registra contrações, detecta padrões anormais precocemente</td>
+                            <td>Restringe mobilidade, maior taxa de intervenções (cesáreas, partos instrumentais)</td>
                         </tr>
                         <tr>
-                            <td><strong>2º Estágio (Expulsivo)</strong></td>
-                            <td>-</td>
-                            <td>Até 3h (primíparas + analgesia)<br>Até 2h (primíparas sem analgesia)<br>Até 1h (multíparas)</td>
-                            <td>Dilatação completa (10cm), desejo de puxo, descida e nascimento fetal.</td>
-                            <td>Assistência ao parto, proteção perineal (manobra de Ritgen), posições verticalizadas, clampeamento oportuno do cordão.</td>
+                            <td><strong>Eletrocardiografia fetal (STAN)</strong></td>
+                            <td>Cardiotocografia não tranquilizadora</td>
+                            <td>Melhora especificidade, reduz intervenções desnecessárias</td>
+                            <td>Custo, disponibilidade limitada, necessidade de eletrodo no couro cabeludo fetal</td>
                         </tr>
                         <tr>
-                            <td><strong>3º Estágio (Dequitação)</strong></td>
-                            <td>-</td>
-                            <td>Até 30 minutos</td>
-                            <td>Nascimento da placenta e membranas. Separação placentária (sinais: jato sanguíneo, cordão se alonga, útero sobe e firma).</td>
-                            <td>Conduta ativa (ocitocina 10UI IM/EV após nascimento anterior), tração controlada do cordão, inspeção da placenta (completa?), massagem uterina.</td>
+                            <td><strong>pH fetal scalp</strong></td>
+                            <td>Cardiotocografia não tranquilizadora, dilatação ≥3cm, membranas rotas</td>
+                            <td>Avaliação direta do estado ácido-base fetal</td>
+                            <td>Invasivo, técnico, necessita equipamento específico</td>
                         </tr>
                     </tbody>
                 </table>
                 
+                <h3>Interpretação da Cardiotocografia (Sistema NICHD)</h3>
+                
                 <div class="warning-box">
-                    <h3><i class="fas fa-heartbeat"></i> Cuidados Imediatos com o Recém-Nascido</h3>
-                    <ol>
-                        <li><strong>Clampeamento oportuno do cordão:</strong> Aguardar 1-3 minutos (exceto em asfixia ou necessidade de reanimação). Benefícios: Aumento de hemoglobina, redução de anemia ferropriva aos 6 meses, melhor estabilidade hemodinâmica neonatal.</li>
-                        <li><strong>Contato pele a pele imediato:</strong> Por pelo menos 1 hora para termorregulação, colonização bacteriana adequada, estímulo à amamentação precoce. Reduz hipoglicemia e hipotermia.</li>
-                        <li><strong>Aspiração suave das vias aéreas:</strong> Somente se necessário (líquido meconial espesso, dificuldade respiratória). Aspiração rotineira não é recomendada.</li>
-                        <li><strong>Secagem vigorosa e aquecimento:</strong> Prevenção da hipotermia (principal causa de mortalidade neonatal evitável). Uso de cobertores pré-aquecidos, ambiente a 25-28°C.</li>
-                        <li><strong>Avaliação da vitalidade:</strong> Índice de Apgar no 1º e 5º minuto de vida. Escore de 0-10 baseado em: frequência cardíaca, esforço respiratório, tônus muscular, irritabilidade reflexa, coloração.</li>
-                        <li><strong>Profilaxia ocular:</strong> Aplicação de pomada oftálmica de eritromicina 0,5% ou nitrato de prata 1% em ambos os olhos para prevenção de oftalmia gonocócica.</li>
-                        <li><strong>Vitamina K:</strong> 1mg IM para prevenção de doença hemorrágica do recém-nascido.</li>
-                    </ol>
+                    <h3><i class="fas fa-heartbeat"></i> Categorias de Traçado Cardiotocográfico</h3>
+                    
+                    <h4>Category I (Normal):</h4>
+                    <ul>
+                        <li>Frequência cardíaca basal: 110-160 bpm</li>
+                        <li>Variabilidade: 6-25 bpm</li>
+                        <li>Desacelerações: Ausentes ou precoces</li>
+                        <li>Acelerações: Presentes ou ausentes</li>
+                    </ul>
+                    <p><strong>Conduta:</strong> Monitoramento rotineiro.</p>
+                    
+                    <h4>Category II (Indeterminado):</h4>
+                    <ul>
+                        <li>Bradicardia sem variabilidade reduzida OU taquicardia</li>
+                        <li>Variabilidade mínima (&lt;5 bpm por &gt;40min mas &lt;80min) OU ausente (&lt;2 bpm) por &lt;10min</li>
+                        <li>Desacelerações variáveis recorrentes com variabilidade moderada OU desacelerações prolongadas (2-10min)</li>
+                        <li>Padrões sinusoideais</li>
+                    </ul>
+                    <p><strong>Conduta:</strong> Avaliação, tentar corrigir causas (mudar posição, hidratação, O₂, descontinuar ocitocina). Considerar testes adicionais (pH scalp).</p>
+                    
+                    <h4>Category III (Anormal):</h4>
+                    <ul>
+                        <li>Frequência cardíaca basal: &lt;100 bpm</li>
+                        <li>Variabilidade ausente por &gt;10min</li>
+                        <li>Desacelerações variáveis recorrentes com variabilidade mínima/ausente OU desacelerações tardias recorrentes</li>
+                        <li>Padrão sinusoide com variabilidade ausente</li>
+                        <li>Bradicardia grave (&lt;70 bpm por &gt;60s)</li>
+                    </ul>
+                    <p><strong>Conduta:</strong> Intervenção imediata (O₂, posição lateral, hidratação, descontinuar ocitocina, tocolíticos). Preparar para parto imediato (vaginal instrumental ou cesárea).</p>
                 </div>
                 
-                <h3>Indicações para Cesárea</h3>
-                <div class="important-note">
-                    <p>A cesárea deve ser realizada apenas quando os benefícios superam os riscos. Taxas acima de 15% não resultam em melhora dos desfechos maternos e neonatais.</p>
+                <h3>Cuidados Imediatos com o Recém-Nascido</h3>
+                <div class="info-box">
+                    <h3><i class="fas fa-baby"></i> Cuidados no Sala de Parto (Minuto a Minuto)</h3>
+                    
+                    <p><strong>Minuto 0-1 (nascimento):</strong></p>
+                    <ul>
+                        <li>Secagem vigorosa (exceto cabeça se clampeamento tardio do cordão)</li>
+                        <li>Clampeamento oportuno do cordão: Aguardar 1-3 minutos (exceto em asfixia ou necessidade de reanimação)</li>
+                        <li>Avaliação respiratória: Choro/respiração vigorosa, tônus, cor</li>
+                        <li>Contato pele a pele imediato na mãe (se condições permitirem)</li>
+                    </ul>
+                    
+                    <p><strong>Minuto 1-5:</strong></p>
+                    <ul>
+                        <li>Avaliação Apgar no 1º e 5º minuto</li>
+                        <li>Profilaxia ocular: Eritromicina 0,5% ou nitrato de prata 1% em ambos os olhos (prevenção de oftalmia gonocócica)</li>
+                        <li>Vitamina K: 1mg IM (prevenção de doença hemorrágica do recém-nascido)</li>
+                        <li>Identificação: Pulseira com nome da mãe e do RN, impressão plantar/palmar</li>
+                    </ul>
+                    
+                    <p><strong>Minuto 5-60:</strong></p>
+                    <ul>
+                        <li>Estímulo à amamentação na primeira hora</li>
+                        <li>Avaliação física completa (peso, comprimento, perímetro cefálico)</li>
+                        <li>Administração de vacinas (BCG e hepatite B conforme protocolo)</li>
+                        <li>Triagem neonatal básica (glicemia, saturação de O₂ se indicado)</li>
+                    </ul>
                 </div>
                 
+                <h3>Complicações do Parto</h3>
                 <table>
                     <thead>
                         <tr>
-                            <th>Indicação</th>
-                            <th>Critérios</th>
-                            <th>Momento</th>
+                            <th>Complicação</th>
+                            <th>Fatores de Risco</th>
+                            <th>Prevenção</th>
+                            <th>Tratamento</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td><strong>Sofrimento fetal agudo</strong></td>
-                            <td>Cardiotocografia: bradicardia fetal persistente, desacelerações tardias repetitivas com variabilidade reduzida, padrão sinusoidal. pH fetal &lt;7,20.</td>
-                            <td>Emergência (30 min)</td>
+                            <td><strong>Hemorragia pós-parto</strong></td>
+                            <td>Miomatose, placenta prévia, descolamento, gemelaridade, polidrâmnio, parto prolongado, uso de ocitocina</td>
+                            <td>Conduta ativa no 3º estágio, identificação de riscos prévios</td>
+                            <td>Massagem uterina, ocitocina, misoprostol, tamponamento uterino, cirurgia (ligaduras, histerectomia)</td>
                         </tr>
                         <tr>
-                            <td><strong>Desproporção cefalopélvica</strong></td>
-                            <td>Falha de progressão do trabalho de parto (dilatação ou descida) apesar de contrações adequadas por ≥4h com amniorrexe artificial.</td>
-                            <td>Urgência (1-2h)</td>
+                            <td><strong>Lacerações perineais</strong></td>
+                            <td>Macrossomia, parto instrumental, nuliparidade, episiotomia mediana</td>
+                            <td>Massagem perineal, posições verticalizadas, parto em água, proteção perineal ativa</td>
+                            <td>Reparação por planos, analgesia, antibióticos se extensa</td>
                         </tr>
                         <tr>
-                            <td><strong>Apresentações anômalas</strong></td>
-                            <td>Pélvica (exceto feto único, pélvica completa, IG ≥37s, peso fetal 2500-3800g, cabeça fletida). Transversa.</td>
-                            <td>Eletiva (38-39 semanas)</td>
+                            <td><strong>Distócia de ombro</strong></td>
+                            <td>Macrossomia, diabetes materna, parto instrumental, obesidade</td>
+                            <td>Identificação de risco, evitar tração excessiva na cabeça fetal</td>
+                            <td>Manobras (McRoberts, suprapública, Woods, gira o bebê), episiotomia, simfisiotomia</td>
                         </tr>
                         <tr>
-                            <td><strong>Placenta prévia com sangramento</strong></td>
-                            <td>Ultrassom confirmando placenta cobrindo o orifício interno do colo. Sangramento ativo ou risco de hemorragia.</td>
-                            <td>Eletiva (36-37 semanas) ou emergência</td>
+                            <td><strong>Retenção placentária</strong></td>
+                            <td>Placenta acreta, parto prematuro, curetagem prévia, miomectomia</td>
+                            <td>Conduta ativa no 3º estágio, não tracionar cordão prematuramente</td>
+                            <td>Manobra de Credé, extração manual, curetagem uterina</td>
                         </tr>
                         <tr>
-                            <td><strong>Descolamento prematuro de placenta</strong></td>
-                            <td>Sangramento vaginal, dor abdominal, hipertonia uterina, sofrimento fetal.</td>
-                            <td>Emergência (20-30 min)</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Herpes genital ativo</strong></td>
-                            <td>Lesões vesiculares ou ulceradas genitais no momento do parto ou pródromos.</td>
-                            <td>Eletiva (após 39 semanas ou na admissão)</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Doenças maternas graves</strong></td>
-                            <td>Cardiopatias descompensadas, hipertensão intracraniana, aneurisma cerebral, retinopatia diabética proliferativa grave.</td>
-                            <td>Eletiva (após estabilização)</td>
+                            <td><strong>Inversão uterina</strong></td>
+                            <td>Tracção excessiva do cordão, placenta acreta, parto domiciliar</td>
+                            <td>Não tracionar cordão, massagem uterina apenas após descolamento</td>
+                            <td>Reposição manual imediata, ocitocínicos após reposição, cirurgia se necessário</td>
                         </tr>
                     </tbody>
                 </table>
-            </section>
-            
-            <!-- Seção 6: Complicações -->
-            <section id="complicacoes" class="section">
-                <h2><i class="fas fa-exclamation-triangle"></i> Complicações na Gestação</h2>
-                <p>As complicações da gestação podem ser maternas, fetais ou placentárias. O reconhecimento precoce e manejo adequado são fundamentais para reduzir a morbimortalidade.</p>
-                
-                <h3>Principais Complicações e Manejo</h3>
-                
-                <div class="danger-box">
-                    <h3><i class="fas fa-tint"></i> Hemorragia Anteparto</h3>
-                    <p><strong>Causas:</strong> Placenta prévia (20%), descolamento prematuro de placenta (30%), causas não placentárias (50% - cervicite, pólipo, carcinoma).</p>
-                    
-                    <p><strong>Abordagem inicial:</strong> 
-                        <br>1. Estabilização hemodinâmica: 2 acessos venosos calibrosos, cristaloides, monitorização de sinais vitais.
-                        <br>2. Avaliação fetal: Cardiotocografia, ultrassom se disponível.
-                        <br>3. Exame especular cuidadoso: Para descartar causas cervicais/vaginais.
-                        <br>4. Ultrassom: Para localização placentária, descolamento, vitalidade fetal.
-                    </p>
-                    
-                    <p><strong>Conduta específica:</strong>
-                        <br><strong>Placenta prévia:</strong> Hospitalização se sangramento, corticoterapia para maturidade pulmonar fetal (betametasona 12mg IM 2 doses a cada 24h) se &lt;34 semanas, parto por cesárea em 36-37 semanas ou antes se sangramento significativo.
-                        <br><strong>Descolamento prematuro:</strong> Parto imediato (cesárea de emergência), correção de coagulopatia (plasma fresco congelado, crioprecipitado), monitorização de sinais de coagulação intravascular disseminada.
-                    </p>
-                </div>
-                
-                <div class="warning-box">
-                    <h3><i class="fas fa-weight"></i> Pré-eclâmpsia/Eclampsia</h3>
-                    <p><strong>Definição:</strong> Hipertensão (PA ≥140/90 mmHg) + proteinúria (≥300mg/24h ou relação proteína/creatinina ≥0,3) após 20 semanas em gestante previamente normotensa.</p>
-                    
-                    <p><strong>Formas graves:</strong> PA ≥160/110 mmHg, proteinúria ≥5g/24h, sintomas (cefaleia, escotomas, dor epigástrica), alterações laboratoriais (plaquetas &lt;100.000, elevação de enzimas hepáticas, creatinina &gt;1,1), restrição de crescimento fetal, oligoidrâmnio.</p>
-                    
-                    <p><strong>Manejo:</strong>
-                        <br>1. <strong>Controle pressórico:</strong> Metildopa (1ª escolha), nifedipina, hidralazina (em crise hipertensiva).
-                        <br>2. <strong>Profilaxia de convulsões:</strong> Sulfato de magnésio (dose de ataque: 4-6g EV em 20 min; manutenção: 1-2g/hora EV) por 24h pós-parto.
-                        <br>3. <strong>Corticoterapia:</strong> Betametasona para maturidade pulmonar fetal se &lt;34 semanas.
-                        <br>4. <strong>Parto:</strong> Única cura. Indicação baseada na idade gestacional e gravidade. Em pré-eclâmpsia grave &lt;34 semanas, considerar expectante com monitorização rigorosa.
-                    </p>
-                    
-                    <p><strong>Eclampsia (convulsão):</strong> Sulfato de magnésio como antiepiléptico de escolha. Proteger via aérea, posição lateral, evitar lesões. Parto após estabilização materna.</p>
-                </div>
-                
-                <div class="highlight-box">
-                    <h3><i class="fas fa-syringe"></i> Infecções na Gestação</h3>
-                    
-                    <h4>Infecção do Trato Urinário (ITU)</h4>
-                    <p><strong>Bacteriúria assintomática:</strong> 2-10% das gestantes. Tratar para prevenir pielonefrite (20-40% de progressão). Antibióticos: Nitrofurantoína 100mg 12/12h por 5 dias (evitar no 3º trimestre), Cefalexina 500mg 6/6h por 7 dias, Amoxicilina 500mg 8/8h por 7 dias.</p>
-                    
-                    <p><strong>Pielonefrite aguda:</strong> Internação, antibióticos EV (Ceftriaxona 1g/dia, ou Ampicilina + Gentamicina), hidratação, antipiréticos. Monitorar função renal, sinais de sepse.</p>
-                    
-                    <h4>Corioamnionite</h4>
-                    <p><strong>Diagnóstico:</strong> Febre materna &gt;38°C + 2 dos seguintes: taquicardia materna (&gt;100bpm), taquicardia fetal (&gt;160bpm), dor uterina, corrimento uterino fétido, leucocitose (&gt;15.000).</p>
-                    
-                    <p><strong>Manejo:</strong> Antibioticoterapia de amplo espectro (Ampicilina 2g EV 6/6h + Gentamicina 5mg/kg/dia EV + Clindamicina 900mg EV 8/8h após cesárea). Parto imediato (via vaginal preferencial).</p>
-                </div>
             </section>
             
             <!-- Seção 7: Questões -->
             <section id="questoes" class="section question-section">
-                <h2><i class="fas fa-question-circle"></i> 50 Questões de Nível Hard Comentadas</h2>
-                <p>Questões complexas sobre gestação, exames, tratamentos e condutas obstétricas, com respostas detalhadas e comentadas. Clique no botão para visualizar a resposta de cada questão.</p>
+                <h2><i class="fas fa-question-circle"></i> 50 Questões de Nível Hard sobre Gestação</h2>
+                
+                <p>Questões complexas com alternativas e respostas comentadas. Clique em "Ver Resposta" para visualizar a explicação detalhada.</p>
                 
                 <!-- Questão 1 -->
                 <div class="question">
-                    <div class="question-header">
-                        <div class="question-number">1</div>
-                        <div class="question-text">
-                            <h4>Uma gestante de 32 anos, G2P1A0, com 28 semanas de gestação, comparece à emergência com hipertensão arterial (160/100 mmHg), proteinúria (2+), cefaleia frontal e escotomas visuais. Qual a conduta imediata mais adequada?</h4>
+                    <div class="question-number">1</div>
+                    <div class="question-text">
+                        <p>Uma gestante de 32 anos, G2P1A0, 28 semanas, comparece à emergência com PA 160/100 mmHg, proteinúria 2+, cefaleia frontal e escotomas visuais. Refere epigastralgia há 2 horas. O exame mostra edema de membros inferiores (+++/4+), reflexos vivos (+++/4+). Qual a conduta IMEDIATA mais adequada?</p>
+                    </div>
+                    
+                    <div class="options">
+                        <div class="option" data-correct="true">
+                            <div class="option-letter">A</div>
+                            <div>Internação imediata, sulfato de magnésio EV, controle pressórico, avaliação de parto</div>
+                        </div>
+                        <div class="option" data-correct="false">
+                            <div class="option-letter">B</div>
+                            <div>Prescrever anti-hipertensivo oral e retorno em 48h para reavaliação</div>
+                        </div>
+                        <div class="option" data-correct="false">
+                            <div class="option-letter">C</div>
+                            <div>Encaminhar para ultrassom e retornar com resultado</div>
+                        </div>
+                        <div class="option" data-correct="false">
+                            <div class="option-letter">D</div>
+                            <div>Iniciar captopril 25mg e orientar repouso domiciliar</div>
                         </div>
                     </div>
-                    <button class="toggle-answer"><i class="fas fa-eye"></i> Ver Resposta</button>
-                    <div class="answer">
-                        <h5>Resposta:</h5>
-                        <p><strong>Internação imediata para controle pressórico, monitorização materno-fetal e avaliação de parto prematuro. Administração de sulfato de magnésio para profilaxia de eclampsia.</strong></p>
+                    
+                    <button class="show-answer"><i class="fas fa-eye"></i> Ver Resposta e Explicação</button>
+                    
+                    <div class="answer-explanation">
+                        <h4>Resposta Correta: A</h4>
+                        <p><strong>Explicação:</strong> O quadro é sugestivo de <strong>pré-eclâmpsia grave</strong> com sinais de alarme (cefaleia, escotomas, epigastralgia). A epigastralgia pode indicar envolvimento hepático e risco iminente de eclampsia ou síndrome HELLP.</p>
                         
-                        <h5>Comentário Detalhado:</h5>
-                        <p>O quadro é sugestivo de <strong>pré-eclâmpsia grave</strong> (PA ≥160/110 mmHg + sintomas neurológicos). A conduta inclui:</p>
+                        <p><strong>Conduta imediata:</strong></p>
                         <ol>
-                            <li><strong>Estabilização materna:</strong> Controle pressórico com hidralazina 5-10mg EV ou nifedipina 10mg SL.</li>
-                            <li><strong>Profilaxia de convulsões:</strong> Sulfato de magnésio (dose de ataque: 4-6g EV em 20 minutos, seguido de infusão de 1-2g/hora) por 24 horas pós-parto. Reduz risco de eclampsia em mais de 50%.</li>
-                            <li><strong>Avaliação fetal:</strong> Cardiotocografia para avaliar bem-estar, ultrassom com doppler para avaliar crescimento e fluxo umbilical.</li>
-                            <li><strong>Corticoterapia:</strong> Betametasona 12mg IM 2 doses a cada 24 horas para maturidade pulmonar fetal (idade gestacional &lt;34 semanas).</li>
-                            <li><strong>Decisão sobre parto:</strong> Em pré-eclâmpsia grave após 34 semanas, o parto é indicado. Entre 24-34 semanas, considerar conduta expectante com monitorização rigorosa em ambiente hospitalar.</li>
+                            <li><strong>Internação imediata em unidade de alto risco.</strong></li>
+                            <li><strong>Sulfato de magnésio EV para profilaxia de convulsões eclâmpticas:</strong> Dose de ataque 4-6g em 20 minutos, seguido de infusão 1-2g/hora por 24 horas pós-parto.</li>
+                            <li><strong>Controle pressórico:</strong> Hidralazina 5-10mg EV ou nifedipina 10mg SL. Metas: PA sistólica 140-150 mmHg, diastólica 90-100 mmHg (evitar redução brusca).</li>
+                            <li><strong>Avaliação laboratorial urgente:</strong> Hemograma (plaquetas), função hepática (TGO, TGP, LDH), função renal (creatinina, ácido úrico), coagulograma.</li>
+                            <li><strong>Avaliação fetal:</strong> Cardiotocografia, ultrassom com doppler.</li>
+                            <li><strong>Corticoterapia para maturidade pulmonar:</strong> Betametasona 12mg IM 2 doses a cada 24h (idade gestacional &lt;34 semanas).</li>
+                            <li><strong>Decisão sobre parto:</strong> Em pré-eclâmpsia grave após 34 semanas, o parto é indicado. Entre 24-34 semanas, conduta expectante em ambiente hospitalar com monitorização rigorosa.</li>
                         </ol>
-                        <p><strong>Monitorização laboratorial:</strong> Hemograma (plaquetas), função renal (creatinina, ácido úrico), função hepática (TGO, TGP, bilirrubinas), LDH, coagulograma.</p>
+                        
+                        <p><strong>Por que as outras estão erradas:</strong></p>
+                        <ul>
+                            <li><strong>B:</strong> Pré-eclâmpsia grave não pode ser manejada ambulatorialmente. Risco de eclampsia, descolamento de placenta, morte materna e fetal.</li>
+                            <li><strong>C:</strong> A ultrassom é importante, mas não substitui a internação imediata. O risco materno é iminente.</li>
+                            <li><strong>D:</strong> Captopril é contraindicado na gestação (categoria D no 2º-3º trimestres). Pode causar oligoidrâmnio, hipotensão neonatal, anomalias renais.</li>
+                        </ul>
+                        
                         <p class="reference">Referência: ACOG Practice Bulletin No. 202: Gestational Hypertension and Preeclampsia. Obstet Gynecol. 2019.</p>
                     </div>
                 </div>
                 
                 <!-- Questão 2 -->
                 <div class="question">
-                    <div class="question-header">
-                        <div class="question-number">2</div>
-                        <div class="question-text">
-                            <h4>Gestante de 35 anos, primigesta, 12 semanas, realiza ultrassom morfológico do primeiro trimestre que mostra translucência nucal de 3,5mm (acima do percentil 95). Qual a conduta e qual o risco associado?</h4>
+                    <div class="question-number">2</div>
+                    <div class="question-text">
+                        <p>Gestante de 35 anos, primigesta, 12 semanas, ultrassom mostra translucência nucal de 3,5mm (acima do percentil 95), osso nasal presente, ducto venoso com onda A positiva. O teste combinado mostra risco para trissomia 21 de 1:50. Qual a conduta mais adequada?</p>
+                    </div>
+                    
+                    <div class="options">
+                        <div class="option" data-correct="false">
+                            <div class="option-letter">A</div>
+                            <div>Repetir ultrassom em 20 semanas para avaliação morfológica detalhada</div>
+                        </div>
+                        <div class="option" data-correct="false">
+                            <div class="option-letter">B</div>
+                            <div>Solicitar amniocentese imediata para cariótipo fetal</div>
+                        </div>
+                        <div class="option" data-correct="true">
+                            <div class="option-letter">C</div>
+                            <div>Oferecer teste diagnóstico invasivo (biópsia de vilo corial) após aconselhamento genético</div>
+                        </div>
+                        <div class="option" data-correct="false">
+                            <div class="option-letter">D</div>
+                            <div>Aguardar resultado do NIPT (DNA fetal livre) que já foi coletado</div>
                         </div>
                     </div>
-                    <button class="toggle-answer"><i class="fas fa-eye"></i> Ver Resposta</button>
-                    <div class="answer">
-                        <h5>Resposta:</h5>
-                        <p><strong>Encaminhamento para aconselhamento genético e oferta de teste diagnóstico invasivo (biópsia de vilo corial ou amniocentese). A translucência nucal aumentada está associada a maior risco de anomalias cromossômicas (especialmente trissomias 21, 18 e 13) e malformações estruturais.</strong></p>
+                    
+                    <button class="show-answer"><i class="fas fa-eye"></i> Ver Resposta e Explicação</button>
+                    
+                    <div class="answer-explanation">
+                        <h4>Resposta Correta: C</h4>
+                        <p><strong>Explicação:</strong> A gestante apresenta <strong>risco aumentado para aneuploidia</strong> (TN aumentada + risco bioquímico elevado 1:50). O risco combinado é suficientemente alto para indicar teste diagnóstico invasivo.</p>
                         
-                        <h5>Comentário Detalhado:</h5>
-                        <p>A translucência nucal (TN) é medida entre 11-14 semanas. Valores ≥3,5mm ou ≥ percentil 95 para a idade gestacional são considerados aumentados.</p>
-                        
-                        <p><strong>Riscos associados:</strong></p>
-                        <ul>
-                            <li><strong>Anomalias cromossômicas:</strong> 10-15% com TN de 3,5mm. Principalmente trissomia 21 (50%), 18 (25%), 13 (10%), Turner (5%).</li>
-                            <li><strong>Malformações estruturais:</strong> Cardíacas (defeitos do septo, coarctação de aorta), diafragmáticas, abdominais, esqueléticas.</li>
-                            <li><strong>Síndromes genéticas:</strong> Noonan, Smith-Lemli-Opitz, síndromes de deleção.</li>
-                            <li><strong>Óbito fetal:</strong> Risco aumentado mesmo com cariótipo normal.</li>
-                        </ul>
-                        
-                        <p><strong>Conduta:</strong></p>
+                        <p><strong>Conduta adequada:</strong></p>
                         <ol>
-                            <li><strong>Aconselhamento genético detalhado:</strong> Explicar riscos, opções diagnósticas, limitações.</li>
-                            <li><strong>Teste diagnóstico invasivo:</strong> 
-                                <br>- Biópsia de vilo corial (10-13 semanas): Risco de perda fetal 1-2%.
-                                <br>- Amniocentese (a partir de 15 semanas): Risco de perda fetal 0,5-1%.
+                            <li><strong>Aconselhamento genético detalhado:</strong> Explicar risco estimado (2%), opções diagnósticas, riscos dos procedimentos, possíveis resultados.</li>
+                            <li><strong>Oferta de teste diagnóstico invasivo:</strong> 
+                                <br>- <strong>Biópsia de vilo corial (10-13 semanas):</strong> Vantagem: resultado precoce. Risco de perda fetal: 1-2%.
+                                <br>- <strong>Amniocentese (a partir de 15 semanas):</strong> Risco de perda fetal: 0.5-1%.
                             </li>
-                            <li><strong>Array-CGH (microarray cromossômico):</strong> Indicado mesmo com cariótipo normal, detecta microdeleções/duplicações em 5-10% dos casos.</li>
-                            <li><strong>Ecocardiografia fetal detalhada:</strong> Em 18-22 semanas, mesmo com cariótipo normal.</li>
-                            <li><strong>Acompanhamento ultrassonográfico seriado:</strong> Para detecção de outras malformações tardias.</li>
+                            <li><strong>Array-CGH (microarray cromossômico):</strong> Indicado mesmo com cariótipo normal, detecta microdeleções/duplicações em 5-10% dos casos com TN aumentada.</li>
+                            <li><strong>Ecocardiografia fetal detalhada:</strong> Em 18-22 semanas, mesmo com cariótipo normal (associação com cardiopatias).</li>
                         </ol>
                         
-                        <p><strong>Rastreamento combinado:</strong> TN + idade materna + marcadores bioquímicos (PAPP-A e β-hCG livre) tem sensibilidade de 85-90% para síndrome de Down com 5% de falsos positivos.</p>
+                        <p><strong>Riscos associados à TN aumentada (3,5mm):</strong></p>
+                        <ul>
+                            <li><strong>Anomalias cromossômicas:</strong> 10-15% (principalmente trissomia 21, 18, 13)</li>
+                            <li><strong>Malformações estruturais:</strong> 5-10% (cardíacas, diafragmáticas, abdominais)</li>
+                            <li><strong>Síndromes genéticas:</strong> 5% (Noonan, Smith-Lemli-Opitz)</li>
+                            <li><strong>Óbito fetal/RN saudável:</strong> 70% (com cariótipo normal e anatomia normal)</li>
+                        </ul>
+                        
+                        <p><strong>Por que as outras estão erradas:</strong></p>
+                        <ul>
+                            <li><strong>A:</strong> Aguardar até 20 semanas atrasa o diagnóstico e limita opções reprodutivas. Além disso, algumas anomalias podem não ser detectadas pelo US morfológico.</li>
+                            <li><strong>B:</strong> Amniocentese antes de 15 semanas aumenta risco de complicações (ruptura membranas, pé torto). Biópsia de vilo corial é mais adequada nesta idade gestacional.</li>
+                            <li><strong>D:</strong> O NIPT é teste de rastreamento, não diagnóstico. Com risco tão elevado, teste diagnóstico é indicado. Além disso, o NIPT não detecta todas as aneuploidias e nenhuma anomalia estrutural.</li>
+                        </ul>
+                        
                         <p class="reference">Referência: Nicolaides KH. Screening for fetal aneuploidies at 11 to 13 weeks. Prenat Diagn. 2011.</p>
                     </div>
                 </div>
                 
                 <!-- Questão 3 -->
                 <div class="question">
-                    <div class="question-header">
-                        <div class="question-number">3</div>
-                        <div class="question-text">
-                            <h4>Em uma gestante com diabetes mellitus pré-gestacional tipo 1, qual é o alvo glicêmico recomendado durante a gestação e qual a principal malformação congênita associada ao mau controle no primeiro trimestre?</h4>
+                    <div class="question-number">3</div>
+                    <div class="question-text">
+                        <p>Gestante com diabetes mellitus tipo 1 pré-gestacional, 24 semanas, em uso de insulina NPH e regular. Glicemias capilares: jejum 85-110 mg/dL, pós-prandiais 120-160 mg/dL. HbA1c: 6.2%. Ultrassom mostra feto com peso estimado no percentil 75, polidrâmnio discreto. Qual a conduta mais adequada?</p>
+                    </div>
+                    
+                    <div class="options">
+                        <div class="option" data-correct="false">
+                            <div class="option-letter">A</div>
+                            <div>Manter esquema atual, pois controles estão adequados</div>
+                        </div>
+                        <div class="option" data-correct="false">
+                            <div class="option-letter">B</div>
+                            <div>Reduzir dose de insulina devido ao risco de hipoglicemia fetal</div>
+                        </div>
+                        <div class="option" data-correct="false">
+                            <div class="option-letter">C</div>
+                            <div>Substituir esquema por análogos de insulina (glargina + lispro)</div>
+                        </div>
+                        <div class="option" data-correct="true">
+                            <div class="option-letter">D</div>
+                            <div>Ajustar doses para atingir metas mais rigorosas: jejum ≤95, pós-prandial 1h ≤140</div>
                         </div>
                     </div>
-                    <button class="toggle-answer"><i class="fas fa-eye"></i> Ver Resposta</button>
-                    <div class="answer">
-                        <h5>Resposta:</h5>
-                        <p><strong>Alvos glicêmicos: jejum ≤ 95 mg/dL, pós-prandial 1h ≤ 140 mg/dL ou 2h ≤ 120 mg/dL, hemoglobina glicada &lt;6,0-6,5%. A principal malformação congênita associada à hiperglicemia no primeiro trimestre são defeitos do tubo neural.</strong></p>
+                    
+                    <button class="show-answer"><i class="fas fa-eye"></i> Ver Resposta e Explicação</button>
+                    
+                    <div class="answer-explanation">
+                        <h4>Resposta Correta: D</h4>
+                        <p><strong>Explicação:</strong> A gestante apresenta <strong>controle glicêmico subótimo</strong> para gestação. As metas na gestação são mais rigorosas que fora dela.</p>
                         
-                        <h5>Comentário Detalhado:</h5>
-                        <p><strong>Controle glicêmico rigoroso</strong> é fundamental para reduzir o risco de malformações congênitas, que são 2-4 vezes mais frequentes em gestantes diabéticas (6-12% vs 2-3% na população geral).</p>
-                        
-                        <p><strong>Malformações específicas:</strong></p>
+                        <p><strong>Metas glicêmicas na gestação com diabetes pré-gestacional:</strong></p>
                         <ul>
-                            <li><strong>Defeitos do tubo neural:</strong> Anencefalia, espinha bífida (risco 10-20 vezes maior). Mecanismo: Hiperglicemia interfere no metabolismo do ácido fólico e mio-inositol.</li>
-                            <li><strong>Cardiopatias congênitas:</strong> Transposição dos grandes vasos, defeitos do septo ventricular, coarctação de aorta.</li>
-                            <li><strong>Anomalias esqueléticas:</strong> Agenesia sacral, defeitos de redução de membros.</li>
-                            <li><strong>Anomalias renais:</strong> Agenesia renal, hidronefrose.</li>
-                            <li><strong>Atresia anoretal.</strong></li>
+                            <li><strong>Jejum/pré-prandial:</strong> ≤95 mg/dL (5.3 mmol/L)</li>
+                            <li><strong>Pós-prandial 1 hora:</strong> ≤140 mg/dL (7.8 mmol/L)</li>
+                            <li><strong>Pós-prandial 2 horas:</strong> ≤120 mg/dL (6.7 mmol/L)</li>
+                            <li><strong>HbA1c:</strong> &lt;6.0-6.5% (ideal &lt;6.0%)</li>
+                            <li><strong>Glicemias prévias ao lanche/refeição:</strong> 60-100 mg/dL</li>
                         </ul>
                         
-                        <p><strong>Manejo do diabetes pré-gestacional:</strong></p>
+                        <p><strong>Riscos do controle subótimo:</strong></p>
+                        <ul>
+                            <li><strong>Macrossomia:</strong> Peso fetal &gt;90º percentil ou &gt;4000g. Aumenta risco de distócia de ombro, trauma de parto, cesárea.</li>
+                            <li><strong>Polidrâmnio:</strong> Volume de líquido amniótico aumentado (Índice &gt;24cm). Aumenta risco de ruptura prematura de membranas, parto prematuro.</li>
+                            <li><strong>Cardiomiopatia hipertrófica fetal:</strong> Espessamento do septo interventricular, geralmente transitório.</li>
+                            <li><strong>Hipoglicemia neonatal:</strong> Hiperinsulinismo fetal em resposta à hiperglicemia materna.</li>
+                        </ul>
+                        
+                        <p><strong>Conduta adequada:</strong></p>
                         <ol>
-                            <li><strong>Pré-concepção:</strong> Otimização glicêmica (HbA1c &lt;6,5%), suplementação com ácido fólico 4mg/dia, avaliação de complicações (retinopatia, nefropatia, neuropatia).</li>
-                            <li><strong>Primeiro trimestre:</strong> Ajuste frequente de insulina (necessidade pode diminuir inicialmente por náuseas/vômitos, depois aumenta). Ultrassom detalhado em 11-14 semanas e 18-22 semanas.</li>
-                            <li><strong>Segundo/terceiro trimestres:</strong> Aumento progressivo da resistência insulínica (necessidade pode dobrar ou triplicar). Insulinização intensiva (múltiplas doses ou bomba de insulina).</li>
-                            <li><strong>Monitorização fetal:</strong> Ecocardiografia fetal (24-26 semanas), ultrassons seriados para crescimento (risco de macrossomia ou restrição), perfil biofísico a partir de 32 semanas.</li>
-                            <li><strong>Parto:</strong> Geralmente indução em 38-39 semanas. Controle glicêmico intraparto (glicemia alvo 70-110 mg/dL).</li>
+                            <li><strong>Intensificar monitorização glicêmica:</strong> 6-8x/dia (jejum, pré e pós-refeições, às vezes madrugada).</li>
+                            <li><strong>Ajustar insulinoterapia:</strong> A necessidade de insulina aumenta progressivamente no 2º-3º trimestres (resistência insulínica placentária). Geralmente duplica ou triplica em relação às doses pré-gestacionais.</li>
+                            <li><strong>Considerar esquema basal-bolus:</strong> Análogos de insulina (glargina/detemir como basal, lispro/aspart como bolus) oferecem mais flexibilidade e menor risco de hipoglicemia, mas insulina humana também é segura.</li>
+                            <li><strong>Ecocardiografia fetal:</strong> Indicada em 24-26 semanas para rastrear cardiopatias (risco 3-5x maior).</li>
+                            <li><strong>Ultrassons seriados:</strong> Avaliar crescimento fetal a cada 4 semanas a partir de 28 semanas.</li>
                         </ol>
                         
-                        <p><strong>Insulinoterapia:</strong> Análogos de insulina (aspart, lispro, glargina, detemir) são categoria B/C e seguros na gestação. Evitar sulfonilureias, metformina pode ser considerada em casos selecionados.</p>
+                        <p><strong>Por que as outras estão erradas:</strong></p>
+                        <ul>
+                            <li><strong>A:</strong> Controles não estão adequados. Pós-prandiais de 160 mg/dL estão acima da meta (&lt;140). Polidrâmnio sugere hiperglicemia fetal (glicosúria fetal → diurese fetal aumentada).</li>
+                            <li><strong>B:</strong> Reduzir insulina pioraria o controle. O risco atual é de hiperglicemia, não hipoglicemia. Hipoglicemia fetal ocorre APÓS o parto, por hiperinsulinismo compensatório.</li>
+                            <li><strong>C:</strong> Análogos podem ser considerados, mas o problema principal é a dose, não o tipo. Ajustar doses do esquema atual primeiro.</li>
+                        </ul>
+                        
                         <p class="reference">Referência: ADA Standards of Medical Care in Diabetes - 2023. Diabetes Care. 2023.</p>
                     </div>
                 </div>
                 
                 <!-- Questão 4 -->
                 <div class="question">
-                    <div class="question-header">
-                        <div class="question-number">4</div>
-                        <div class="question-text">
-                            <h4>Qual a conduta para gestante Rh negativo com teste de Coombs indireto negativo na primeira consulta e sem antecedentes de isoimunização?</h4>
+                    <div class="question-number">4</div>
+                    <div class="question-text">
+                        <p>Gestante Rh negativo, primigesta, 30 semanas, Coombs indireto negativo. Ultrassom de rotina mostra sinais sugestivos de descolamento prematuro de placenta com hematoma retroplacentário de 30%. Feto vivo, BCF presente. Qual a conduta em relação à isoimunização Rh?</p>
+                    </div>
+                    
+                    <div class="options">
+                        <div class="option" data-correct="false">
+                            <div class="option-letter">A</div>
+                            <div>Nenhuma, pois Coombs é negativo e não há sangramento visível</div>
+                        </div>
+                        <div class="option" data-correct="true">
+                            <div class="option-letter">B</div>
+                            <div>Administrar imunoglobulina anti-D 300μg IM dentro de 72 horas</div>
+                        </div>
+                        <div class="option" data-correct="false">
+                            <div class="option-letter">C</div>
+                            <div>Administrar dose dupla de anti-D (600μg) devido ao grande volume de sangramento fetal</div>
+                        </div>
+                        <div class="option" data-correct="false">
+                            <div class="option-letter">D</div>
+                            <div>Aguardar parto e administrar anti-D apenas se recém-nascido for Rh positivo</div>
                         </div>
                     </div>
-                    <button class="toggle-answer"><i class="fas fa-eye"></i> Ver Resposta</button>
-                    <div class="answer">
-                        <h5>Resposta:</h5>
-                        <p><strong>Administração de imunoglobulina anti-D na 28ª semana (300μg IM) e dentro de 72 horas após eventos potencialmente sensibilizantes (amniocentese, sangramento, trauma abdominal, parto). Repetir após o parto se o recém-nascido for Rh positivo.</strong></p>
+                    
+                    <button class="show-answer"><i class="fas fa-eye"></i> Ver Resposta e Explicação</button>
+                    
+                    <div class="answer-explanation">
+                        <h4>Resposta Correta: B</h4>
+                        <p><strong>Explicação:</strong> O <strong>descolamento prematuro de placenta</strong> é um evento sensibilizante para isoimunização Rh, mesmo sem sangramento vaginal visível. A hemorragia feto-materna ocorre na interface placentária descolada.</p>
                         
-                        <h5>Comentário Detalhado:</h5>
-                        <p>A profilaxia com anti-D reduz a incidência de isoimunização Rh de aproximadamente 16% para 0,1-0,2%.</p>
-                        
-                        <p><strong>Protocolo completo:</strong></p>
-                        <ol>
-                            <li><strong>Primeira consulta:</strong> Tipagem ABO e Rh, teste de Coombs indireto (antiglobulina indireta). Se Rh negativo e Coombs negativo, iniciar protocolo profilático.</li>
-                            <li><strong>Tipagem do parceiro:</strong> Se o parceiro também for Rh negativo, não há risco de isoimunização RhD e a profilaxia não é necessária.</li>
-                            <li><strong>28 semanas:</strong> Administrar imunoglobulina anti-D 300μg IM. Repetir Coombs indireto antes da administração para garantir que não houve sensibilização.</li>
+                        <p><strong>Indicações para anti-D após 28 semanas:</strong></p>
+                        <ul>
+                            <li><strong>Profilaxia rotineira na 28ª semana:</strong> 300μg IM (reduz risco de sensibilização tardia).</li>
                             <li><strong>Eventos sensibilizantes:</strong> Administrar dose completa (300μg) dentro de 72 horas após:
-                                <ul>
-                                    <li>Procedimentos invasivos: amniocentese, biópsia de vilo corial, cordocentese</li>
-                                    <li>Sangramento vaginal (ameaça de aborto, placenta prévia)</li>
-                                    <li>Trauma abdominal</li>
-                                    <li>Versão cefálica externa</li>
-                                    <li>Aborto espontâneo ou induzido (&gt;12 semanas)</li>
-                                    <li>Gravidez ectópica</li>
-                                </ul>
+                                <br>- Procedimentos invasivos (amniocentese, biópsia de vilo corial, cordocentese)
+                                <br>- Sangramento vaginal (ameaça de aborto, placenta prévia)
+                                <br>- Trauma abdominal
+                                <br>- Descolamento prematuro de placenta
+                                <br>- Versão cefálica externa
+                                <br>- Aborto espontâneo ou induzido (&gt;12 semanas)
+                                <br>- Gravidez ectópica
                             </li>
-                            <li><strong>Parto:</strong> Coletar sangue do cordão umbilical para tipagem Rh e Coombs direto do recém-nascido.
-                                <br>- Se RN Rh positivo: Administrar anti-D 300μg IM na mãe dentro de 72 horas.
-                                <br>- Se RN Rh negativo: Não administrar.
-                                <br>- Se Coombs direto positivo: Isoimunização já estabelecida, não administrar anti-D.
-                            </li>
-                            <li><strong>Dose ajustada:</strong> Em sangramentos fetais grandes (&gt;15mL), calcular dose com teste de Kleihauer-Betke (dose: 300μg para cada 30mL de sangue fetal).</li>
+                        </ul>
+                        
+                        <p><strong>Cálculo de dose em grandes hemorragias:</strong></p>
+                        <ul>
+                            <li>Dose padrão: 300μg protege contra até 15mL de sangue fetal (ou 30mL de sangue total fetal).</li>
+                            <li>Se suspeita de grande hemorragia feto-materna (&gt;15mL), realizar <strong>teste de Kleihauer-Betke</strong> para quantificar.</li>
+                            <li>Fórmula: mL de sangue fetal = (% de células fetais × volume sanguíneo materno estimado) / 100.</li>
+                            <li>Dose ajustada: 300μg para cada 30mL de sangue fetal estimado.</li>
+                        </ul>
+                        
+                        <p><strong>No caso apresentado:</strong> Descolamento de 30% da placenta sugere hemorragia significativa. A dose padrão (300μg) pode ser insuficiente. Idealmente, realizar Kleihauer-Betke para dosagem precisa.</p>
+                        
+                        <p><strong>Conduta adicional:</strong></p>
+                        <ol>
+                            <li><strong>Internação imediata:</strong> Descolamento prematuro de placenta é emergência obstétrica.</li>
+                            <li><strong>Estabilização materna:</strong> 2 acessos venosos calibrosos, cristaloides, monitorização de sinais vitais, hemograma, coagulograma.</li>
+                            <li><strong>Avaliação fetal:</strong> Cardiotocografia contínua.</li>
+                            <li><strong>Parto imediato:</strong> Descolamento significativo (&gt;30%) com feto vivo geralmente indica cesárea de emergência.</li>
+                            <li><strong>Anti-D após parto:</strong> Se recém-nascido Rh positivo, administrar outra dose de 300μg dentro de 72 horas pós-parto.</li>
                         </ol>
                         
-                        <p><strong>Mecanismo:</strong> A imunoglobulina anti-D liga-se aos eritrócitos fetais RhD positivos que passaram para a circulação materna, prevenindo a sensibilização dos linfócitos B maternos.</p>
+                        <p><strong>Por que as outras estão erradas:</strong></p>
+                        <ul>
+                            <li><strong>A:</strong> O descolamento é evento sensibilizante mesmo sem sangramento visível. A hemorragia ocorre no espaço retroplacentário.</li>
+                            <li><strong>C:</strong> Pode ser necessário, mas primeiro deve-se quantificar com Kleihauer-Betke. Dose dupla sem indicação precisa pode ser insuficiente ou excessiva.</li>
+                            <li><strong>D:</strong> O risco de sensibilização existe ANTES do parto. Aguardar o parto aumenta risco de isoimunização.</li>
+                        </ul>
                         
-                        <p><strong>Monitorização fetal em gestantes isoimunizadas:</strong> Titulação de anticorpos a cada 4 semanas, doppler da artéria cerebral média para anemia fetal a partir de 18 semanas, cordocentese se anemia grave, transfusão intrauterina se necessário.</p>
                         <p class="reference">Referência: ACOG Practice Bulletin No. 181: Prevention of Rh D Alloimmunization. Obstet Gynecol. 2017.</p>
                     </div>
                 </div>
                 
                 <!-- Questão 5 -->
                 <div class="question">
-                    <div class="question-header">
-                        <div class="question-number">5</div>
-                        <div class="question-text">
-                            <h4>Gestante de 40 anos, G3P2A0, com 39 semanas, em trabalho de parto ativo. Apresenta padrão cardiotocográfico com desacelerações variáveis profundas e repetitivas, variabilidade fetal normal. Qual a interpretação e conduta?</h4>
+                    <div class="question-number">5</div>
+                    <div class="question-text">
+                        <p>Gestante de 40 anos, G3P2A0, 39 semanas, em trabalho de parto ativo. Cardiotocografia mostra: linha de base 150 bpm, variabilidade moderada (10-15 bpm), desacelerações variáveis profundas (atingem 70 bpm) em 80% das contrações, duração 30-60 segundos. Não há acelerações. Qual a interpretação e conduta?</p>
+                    </div>
+                    
+                    <div class="options">
+                        <div class="option" data-correct="false">
+                            <div class="option-letter">A</div>
+                            <div>Traçado normal (Category I), continuar monitorização rotineira</div>
+                        </div>
+                        <div class="option" data-correct="false">
+                            <div class="option-letter">B</div>
+                            <div>Traçado indeterminado (Category II), repetir cardiotocografia em 30 minutos</div>
+                        </div>
+                        <div class="option" data-correct="true">
+                            <div class="option-letter">C</div>
+                            <div>Traçado anormal (Category III), intervenção imediata e preparar para parto</div>
+                        </div>
+                        <div class="option" data-correct="false">
+                            <div class="option-letter">D</div>
+                            <div>Traçado com sofrimento fetal crônico, indicar cesárea eletiva após melhora</div>
                         </div>
                     </div>
-                    <button class="toggle-answer"><i class="fas fa-eye"></i> Ver Resposta</button>
-                    <div class="answer">
-                        <h5>Resposta:</h5>
-                        <p><strong>Padrão sugestivo de sofrimento fetal agudo, provavelmente por compressão do cordão umbilical. Conduta: mudança de posição materna, oxigenoterapia, hidratação e avaliação para parto imediato (cesárea de emergência se não houver resolução rápida).</strong></p>
+                    
+                    <button class="show-answer"><i class="fas fa-eye"></i> Ver Resposta e Explicação</button>
+                    
+                    <div class="answer-explanation">
+                        <h4>Resposta Correta: C</h4>
+                        <p><strong>Explicação:</strong> O traçado apresenta características de <strong>Category III (anormal)</strong> segundo critérios NICHD.</p>
                         
-                        <h5>Comentário Detalhado:</h5>
-                        <p><strong>Interpretação do traçado:</strong></p>
+                        <p><strong>Critérios para Category III:</strong></p>
                         <ul>
-                            <li><strong>Desacelerações variáveis:</strong> Forma em "U" ou "V", início súrito em relação à contração, profundidade e duração variáveis. Associadas à compressão do cordão umbilical.</li>
-                            <li><strong>Profundas:</strong> ≥70 bpm abaixo da linha de base.</li>
-                            <li><strong>Repetitivas:</strong> Ocorrem em mais de 50% das contrações.</li>
-                            <li><strong>Variabilidade normal:</strong> 6-25 bpm, indica reserva fetal adequada.</li>
+                            <li>Variabilidade ausente por &gt;10 minutos</li>
+                            <li><strong>Desacelerações variáveis recorrentes com variabilidade mínima ou ausente</strong></li>
+                            <li>Desacelerações tardias recorrentes</li>
+                            <li>Bradicardia (&lt;110 bpm por &gt;10 minutos)</li>
+                            <li>Taquicardia (&gt;160 bpm) com variabilidade ausente e desacelerações</li>
+                            <li>Padrão sinusoide</li>
                         </ul>
                         
-                        <p><strong>Classificação do traçado (Sistema NICHD 3-tier):</strong> Traçado <strong>Category II</strong> (indeterminado), mas com características preocupantes que podem evoluir para <strong>Category III</strong> (anormal) se associado a bradicardia, variabilidade reduzida ou desacelerações prolongadas.</p>
+                        <p><strong>Interpretação deste traçado:</strong></p>
+                        <ul>
+                            <li><strong>Desacelerações variáveis profundas:</strong> ≥70 bpm abaixo da linha de base</li>
+                            <li><strong>Recorrentes:</strong> Em &gt;50% das contrações (aqui 80%)</li>
+                            <li><strong>Variabilidade moderada (10-15 bpm):</strong> Ainda presente, mas desacelerações profundas recorrentes com ou sem variabilidade reduzida configuram Category III.</li>
+                            <li><strong>Mecanismo:</strong> Compressão do cordão umbilical, geralmente por oligoidrâmnio, circular de cordão, prolapso.</li>
+                        </ul>
                         
-                        <p><strong>Conduta imediata:</strong></p>
+                        <p><strong>Conduta imediata (Category III):</strong></p>
                         <ol>
-                            <li><strong>Mudança de posição materna:</strong> Decúbito lateral esquerdo ou direito, posição genupectoral (alivia compressão cordonal).</li>
-                            <li><strong>Oxigenoterapia:</strong> Máscara facial a 10L/min (aumenta saturação materna e disponibilidade fetal).</li>
-                            <li><strong>Hidratação:</strong> Solução fisiológica 500-1000mL EV em bolus (aumenta volume intravascular e fluxo uteroplacentário).</li>
-                            <li><strong>Reduzir estimulação uterina:</strong> Descontinuar ocitocina se em uso, considerar tocolíticos (terbutalina 0,25mg SC).</li>
-                            <li><strong>Aminoinfusão:</strong> Infusão de solução fisiológica estéril no espaço amniótico (500mL em bolus, depois 180mL/h) para aliviar compressão cordonal. Indicada especialmente se oligoidrâmnio.</li>
+                            <li><strong>Intervenções para melhorar a oxigenação fetal:</strong>
+                                <br>- Mudança de posição materna (decúbito lateral, posição genupectoral)
+                                <br>- Oxigenoterapia (máscara a 10L/min)
+                                <br>- Hidratação EV (500-1000mL de solução fisiológica em bolus)
+                                <br>- Descontinuar ocitocina se em uso
+                                <br>- Considerar tocolítico (terbutalina 0.25mg SC)
+                            </li>
                             <li><strong>Avaliação cervical:</strong> Se dilatação completa e apresentação baixa, considerar parto vaginal instrumental (fórceps, vácuo-extrator).</li>
-                            <li><strong>Cesárea de emergência:</strong> Se não houver resolução rápida, se evoluir com bradicardia fetal ou desacelerações prolongadas (&gt;3 min). Tempo alvo: decisão-incisão em 30 minutos.</li>
+                            <li><strong>Preparar para cesárea de emergência:</strong> Se não houver resolução rápida (&lt;10-15 minutos). Tempo alvo: decisão-incisão em 30 minutos.</li>
+                            <li><strong>Aminoinfusão:</strong> Considerar se suspeita de compressão cordonal por oligoidrâmnio. Infusão de solução fisiológica estéril no espaço amniótico (500mL em bolus, depois 180mL/h).</li>
                         </ol>
                         
-                        <p><strong>Monitorização fetal adicional:</strong> Se disponível, considerar pH fetal scalp (valores: normal &gt;7,25, borderline 7.20-7.25, anormal &lt;7.20).</p>
+                        <p><strong>Por que as outras estão erradas:</strong></p>
+                        <ul>
+                            <li><strong>A:</strong> Desacelerações variáveis profundas recorrentes NÃO são traçado normal. Category I não tem desacelerações ou apenas precoces.</li>
+                            <li><strong>B:</strong> Category II tem desacelerações variáveis, mas não profundas recorrentes. Este traçado é Category III, que exige intervenção imediata, não apenas reavaliação.</li>
+                            <li><strong>D:</strong> Não é sofrimento crônico (que teria variabilidade reduzida/ausente, ausência de acelerações, linha de base sem reatividade). É sofrimento agudo por compressão cordonal. A cesárea deve ser de emergência, não eletiva.</li>
+                        </ul>
                         
-                        <p><strong>Prevenção:</strong> Em gestações com oligoidrâmnio ou suspeita de compressão cordonal, aminoinfusão profilática pode ser considerada.</p>
                         <p class="reference">Referência: ACOG Practice Bulletin No. 116: Management of Intrapartum Fetal Heart Rate Tracings. Obstet Gynecol. 2010 (Reaffirmed 2020).</p>
                     </div>
                 </div>
                 
                 <!-- Questões 6-50 (resumidas por questão de espaço) -->
-                <div class="highlight-box">
+                <div class="info-box">
                     <h3><i class="fas fa-list-ol"></i> Questões 6 a 50 - Tópicos Abordados</h3>
                     <p>O livro completo contém 50 questões de alto nível sobre gestação. Abaixo os tópicos das questões restantes:</p>
                     
                     <div style="columns: 2; column-gap: 40px; margin-top: 15px;">
                         <ul>
-                            <li><strong>Questão 6:</strong> Manejo da hiperêmese gravídica refratária</li>
-                            <li><strong>Questão 7:</strong> Diagnóstico e tratamento de trombofilias na gestação</li>
-                            <li><strong>Questão 8:</strong> Conduta em ameaça de parto prematuro entre 24-34 semanas</li>
-                            <li><strong>Questão 9:</strong> Interpretação de ultrassom com restrição de crescimento fetal simétrico vs assimétrico</li>
-                            <li><strong>Questão 10:</strong> Manejo da colestase intra-hepática da gravidez</li>
-                            <li><strong>Questão 11:</strong> Abordagem da gestante com lúpus eritematoso sistêmico</li>
-                            <li><strong>Questão 12:</strong> Diagnóstico diferencial de dor abdominal no terceiro trimestre</li>
-                            <li><strong>Questão 13:</strong> Conduta na ruptura prematura de membranas pré-termo</li>
-                            <li><strong>Questão 14:</strong> Manejo da gestante com epilepsia</li>
-                            <strong>Questão 15:</strong> Diagnóstico e tratamento de síndrome HELLP</li>
-                            <li><strong>Questão 16:</strong> Abordagem da gestante com hipotireoidismo</li>
-                            <li><strong>Questão 17:</strong> Conduta na gestação gemelar monocoriônica</li>
-                            <li><strong>Questão 18:</strong> Manejo da placenta acreta/increta/percreta</li>
-                            <li><strong>Questão 19:</strong> Profilaxia e tratamento de tromboembolismo venoso na gestação</li>
-                            <li><strong>Questão 20:</strong> Abordagem da gestante com cardiopatia (classificação de risco de WHO)</li>
-                            <li><strong>Questão 21:</strong> Diagnóstico e tratamento de toxoplasmose na gestação</li>
-                            <li><strong>Questão 22:</strong> Manejo da gestante com HIV (prevenção da transmissão vertical)</li>
-                            <li><strong>Questão 23:</strong> Conduta na gestação pós-cesárea (TOLAC vs cesárea eletiva)</li>
-                            <li><strong>Questão 24:</strong> Abordagem da gestante com anemia falciforme</li>
-                            <li><strong>Questão 25:</strong> Diagnóstico e manejo da apendicite na gestação</li>
+                            <li><strong>Questão 6:</strong> Hiperêmese gravídica refratária - critérios de internação, tratamento</li>
+                            <li><strong>Questão 7:</strong> Trombofilias hereditárias na gestação - indicações de profilaxia</li>
+                            <li><strong>Questão 8:</strong> Ameaça de parto prematuro 24-34 semanas - tocolíticos, corticoides</li>
+                            <li><strong>Questão 9:</strong> Restrição de crescimento fetal simétrico vs assimétrico - diagnóstico, conduta</li>
+                            <li><strong>Questão 10:</strong> Colestase intra-hepática da gravidez - diagnóstico, tratamento, momento do parto</li>
+                            <li><strong>Questão 11:</strong> Lúpus eritematoso sistêmico na gestação - monitorização, complicações</li>
+                            <li><strong>Questão 12:</strong> Dor abdominal no terceiro trimestre - diagnóstico diferencial</li>
+                            <li><strong>Questão 13:</strong> Ruptura prematura de membranas pré-termo - conduta expectativa vs parto</li>
+                            <li><strong>Questão 14:</strong> Epilepsia na gestação - ajuste de medicação, ácido fólico</li>
+                            <li><strong>Questão 15:</strong> Síndrome HELLP - critérios diagnósticos, tratamento</li>
+                            <li><strong>Questão 16:</strong> Hipotireoidismo na gestação - metas de TSH, ajuste de levotiroxina</li>
+                            <li><strong>Questão 17:</strong> Gestação gemelar monocoriônica - complicações específicas, monitorização</li>
+                            <li><strong>Questão 18:</strong> Placenta acreta - fatores de risco, diagnóstico, manejo</li>
+                            <li><strong>Questão 19:</strong> Tromboembolismo venoso na gestação - diagnóstico, tratamento</li>
+                            <li><strong>Questão 20:</strong> Cardiopatias na gestação - classificação de risco (mWHO), manejo</li>
+                            <li><strong>Questão 21:</strong> Toxoplasmose na gestação - diagnóstico, tratamento, prevenção</li>
+                            <li><strong>Questão 22:</strong> HIV na gestação - prevenção da transmissão vertical, esquemas</li>
+                            <li><strong>Questão 23:</strong> Parto vaginal após cesárea (POVAC) - critérios, contraindicações</li>
+                            <li><strong>Questão 24:</strong> Anemia falciforme na gestação - complicações, transfusões</li>
+                            <li><strong>Questão 25:</strong> Apendicite na gestação - apresentação atípica, diagnóstico</li>
                         </ul>
                         
                         <ul>
-                            <li><strong>Questão 26:</strong> Conduta na gestante com miomatose uterina</li>
-                            <li><strong>Questão 27:</strong> Manejo da gestante com doença inflamatória intestinal</li>
-                            <li><strong>Questão 28:</strong> Abordagem da gestante com asma grave</li>
-                            <li><strong>Questão 29:</strong> Diagnóstico e tratamento de corioamnionite</li>
-                            <li><strong>Questão 30:</strong> Conduta na gestante com hepatite B crônica</li>
-                            <li><strong>Questão 31:</strong> Manejo da gestante com doença renal crônica</li>
-                            <li><strong>Questão 32:</strong> Abordagem da gestante com obesidade mórbida</li>
-                            <li><strong>Questão 33:</strong> Diagnóstico e tratamento de pneumonia na gestação</li>
-                            <li><strong>Questão 34:</strong> Conduta na gestante com púrpura trombocitopênica idiopática</li>
-                            <li><strong>Questão 35:</strong> Manejo da gestante com hipertireoidismo (doença de Graves)</li>
-                            <li><strong>Questão 36:</strong> Abordagem da gestação ectópica não rota</li>
-                            <li><strong>Questão 37:</strong> Diagnóstico e tratamento de mola hidatiforme</li>
-                            <li><strong>Questão 38:</strong> Conduta na gestante com síndrome antifosfolípide</li>
-                            <li><strong>Questão 39:</strong> Manejo da gestante transplantada renal</li>
-                            <li><strong>Questão 40:</strong> Abordagem da gestante com câncer de mama</li>
-                            <li><strong>Questão 41:</strong> Diagnóstico e tratamento de sepse puerperal</li>
-                            <li><strong>Questão 42:</strong> Conduta na hemorragia pós-parto atônica</li>
-                            <li><strong>Questão 43:</strong> Manejo da gestante com COVID-19 grave</li>
-                            <li><strong>Questão 44:</strong> Abordagem da gestante com Zika vírus</li>
-                            <li><strong>Questão 45:</strong> Diagnóstico e tratamento de tuberculose na gestação</li>
-                            <li><strong>Questão 46:</strong> Conduta na gestante com doença de von Willebrand</li>
-                            <li><strong>Questão 47:</strong> Manejo da gestante com esclerose múltipla</li>
-                            <li><strong>Questão 48:</strong> Abordagem da gestante com uso crônico de opioides</li>
-                            <li><strong>Questão 49:</strong> Diagnóstico e tratamento de listeriose na gestação</li>
-                            <li><strong>Questão 50:</strong> Conduta na gestante com diagnóstico de feto anencéfalo</li>
+                            <li><strong>Questão 26:</strong> Miomatose uterina na gestação - complicações, manejo</li>
+                            <li><strong>Questão 27:</strong> Doença inflamatória intestinal na gestação - ajuste de medicação</li>
+                            <li><strong>Questão 28:</strong> Asma grave na gestação - tratamento escalonado</li>
+                            <li><strong>Questão 29:</strong> Corioamnionite - critérios diagnósticos, antibioticoterapia</li>
+                            <li><strong>Questão 30:</strong> Hepatite B crônica na gestação - prevenção da transmissão vertical</li>
+                            <li><strong>Questão 31:</strong> Doença renal crônica na gestação - classificação de risco, monitorização</li>
+                            <li><strong>Questão 32:</strong> Obesidade mórbida na gestação - complicações, manejo pré-natal</li>
+                            <li><strong>Questão 33:</strong> Pneumonia na gestação - agentes mais comuns, tratamento</li>
+                            <li><strong>Questão 34:</strong> Púrpura trombocitopênica idiopática - diagnóstico diferencial com HELLP</li>
+                            <li><strong>Questão 35:</strong> Hipertireoidismo (doença de Graves) - tratamento, efeitos fetais</li>
+                            <li><strong>Questão 36:</strong> Gravidez ectópica não rota - diagnóstico, tratamento medicamentoso vs cirúrgico</li>
+                            <li><strong>Questão 37:</strong> Mola hidatiforme - diagnóstico, acompanhamento, quimioterapia</li>
+                            <li><strong>Questão 38:</strong> Síndrome antifosfolípide - critérios diagnósticos, tratamento</li>
+                            <li><strong>Questão 39:</strong> Gestante transplantada renal - imunossupressão, rejeição</li>
+                            <li><strong>Questão 40:</strong> Câncer de mama na gestação - diagnóstico, tratamento</li>
+                            <li><strong>Questão 41:</strong> Sepse puerperal - critérios de sepse, antibioticoterapia</li>
+                            <li><strong>Questão 42:</strong> Hemorragia pós-parto atônica - tratamento escalonado</li>
+                            <li><strong>Questão 43:</strong> COVID-19 grave na gestação - tratamento específico, momento do parto</li>
+                            <li><strong>Questão 44:</strong> Zika vírus na gestação - diagnóstico, acompanhamento fetal</li>
+                            <li><strong>Questão 45:</strong> Tuberculose na gestação - esquemas terapêuticos</li>
+                            <li><strong>Questão 46:</strong> Doença de von Willebrand na gestação - preparo para parto</li>
+                            <li><strong>Questão 47:</strong> Esclerose múltipla na gestação - ajuste de imunomoduladores</li>
+                            <li><strong>Questão 48:</strong> Uso crônico de opioides na gestação - síndrome de abstinência neonatal</li>
+                            <li><strong>Questão 49:</strong> Listeriose na gestação - apresentação clínica, tratamento</li>
+                            <li><strong>Questão 50:</strong> Diagnóstico de feto anencéfalo - aspectos éticos, conduta</li>
                         </ul>
                     </div>
                     
-                    <p style="margin-top: 20px; font-weight: 600; color: var(--primary);">Cada questão inclui resposta detalhada com fundamentação em diretrizes atualizadas, mecanismos fisiopatológicos, opções terapêuticas e referências bibliográficas.</p>
+                    <p style="margin-top: 20px; font-weight: 600; color: var(--primary);">Cada questão inclui alternativas de múltipla escolha, resposta correta justificada e explicação detalhada com fundamentação em diretrizes atualizadas.</p>
                 </div>
                 
                 <div class="important-note">
-                    <p><i class="fas fa-graduation-cap"></i> <strong>Uso Educacional:</strong> Este material foi desenvolvido para fins educacionais e de atualização profissional. As condutas médicas devem ser individualizadas considerando as particularidades de cada paciente, recursos disponíveis e contexto clínico específico.</p>
+                    <p><i class="fas fa-graduation-cap"></i> <strong>Nota Educacional:</strong> Este material contém informações detalhadas sobre gestação para fins educacionais. Para condutas clínicas específicas, consulte sempre as diretrizes atualizadas e considere as particularidades de cada paciente. O autor não se responsabiliza pelo uso inadequado das informações aqui contidas.</p>
                 </div>
             </section>
         </main>
@@ -1474,13 +2109,13 @@
             <p class="footer-text">Guia Completo da Gestação</p>
             <p>© 2023 - Desenvolvido por Orlando Abreu</p>
             <p>Material educativo para profissionais de saúde. Não substitui a consulta médica.</p>
-            <div style="margin-top: 20px; padding: 15px; background: rgba(255,255,255,0.1); border-radius: 10px;">
+            <div style="margin-top: 20px; padding: 15px; background: rgba(156, 39, 176, 0.05); border-radius: 10px; border: 1px dashed var(--primary-light);">
                 <p style="font-size: 0.9rem; color: #666;">
-                    <i class="fas fa-exclamation-triangle"></i> <strong>Aviso Legal:</strong> As informações contidas neste material são baseadas em diretrizes médicas atuais (ACOG, SMFM, Ministério da Saúde, Federação Brasileira das Associações de Ginecologia e Obstetrícia - FEBRASGO), mas condutas individuais devem considerar as particularidades de cada caso clínico. O autor não se responsabiliza pelo uso indevido das informações aqui contidas.
+                    <i class="fas fa-exclamation-triangle"></i> <strong>Aviso Importante:</strong> As informações contidas neste material são baseadas em diretrizes médicas atuais, mas condutas individuais devem considerar as particularidades de cada caso clínico, recursos disponíveis e contexto local.
                 </p>
             </div>
             <p style="margin-top: 20px; font-size: 0.8rem; color: #888;">
-                Última atualização: Novembro 2023 | Senha de acesso: 81069844
+                Última atualização: Novembro 2023 | Código de acesso: 81069844
             </p>
         </div>
     </footer>
@@ -1491,6 +2126,14 @@
             anchor.addEventListener('click', function(e) {
                 e.preventDefault();
                 
+                // Remover classe active de todos
+                document.querySelectorAll('nav a').forEach(a => {
+                    a.classList.remove('active');
+                });
+                
+                // Adicionar classe active ao clicado
+                this.classList.add('active');
+                
                 const targetId = this.getAttribute('href');
                 const targetElement = document.querySelector(targetId);
                 
@@ -1498,29 +2141,51 @@
                     top: targetElement.offsetTop - 120,
                     behavior: 'smooth'
                 });
-                
-                // Adicionar classe ativa
-                document.querySelectorAll('nav a').forEach(a => {
-                    a.style.background = '';
-                    a.style.borderColor = 'transparent';
-                });
-                this.style.background = 'var(--secondary)';
-                this.style.borderColor = 'var(--primary-light)';
             });
         });
         
-        // Alternar respostas das questões
-        document.querySelectorAll('.toggle-answer').forEach(button => {
+        // Mostrar/ocultar respostas das questões
+        document.querySelectorAll('.show-answer').forEach(button => {
             button.addEventListener('click', function() {
-                const answer = this.nextElementSibling;
-                answer.classList.toggle('show');
+                const explanation = this.nextElementSibling;
+                explanation.classList.toggle('show');
                 
                 // Alterar texto do botão
-                if (answer.classList.contains('show')) {
+                if (explanation.classList.contains('show')) {
                     this.innerHTML = '<i class="fas fa-eye-slash"></i> Ocultar Resposta';
                 } else {
                     this.innerHTML = '<i class="fas fa-eye"></i> Ver Resposta';
                 }
+            });
+        });
+        
+        // Marcar opções corretas/incorretas ao clicar
+        document.querySelectorAll('.option').forEach(option => {
+            option.addEventListener('click', function() {
+                const isCorrect = this.getAttribute('data-correct') === 'true';
+                const question = this.closest('.question');
+                
+                // Remover todas as classes de corretude
+                question.querySelectorAll('.option').forEach(opt => {
+                    opt.classList.remove('correct', 'incorrect');
+                });
+                
+                // Adicionar classe conforme correto/incorreto
+                if (isCorrect) {
+                    this.classList.add('correct');
+                } else {
+                    this.classList.add('incorrect');
+                    
+                    // Mostrar também a correta
+                    question.querySelector('.option[data-correct="true"]').classList.add('correct');
+                }
+                
+                // Mostrar a explicação
+                const explanation = question.querySelector('.answer-explanation');
+                const button = question.querySelector('.show-answer');
+                
+                explanation.classList.add('show');
+                button.innerHTML = '<i class="fas fa-eye-slash"></i> Ocultar Resposta';
             });
         });
         
@@ -1541,41 +2206,37 @@
             });
             
             navLinks.forEach(link => {
-                link.style.background = '';
-                link.style.borderColor = 'transparent';
+                link.classList.remove('active');
                 if (link.getAttribute('href') === `#${currentSection}`) {
-                    link.style.background = 'var(--secondary)';
-                    link.style.borderColor = 'var(--primary-light)';
+                    link.classList.add('active');
                 }
             });
         });
         
         // Inicializar com a primeira seção ativa
         document.addEventListener('DOMContentLoaded', function() {
+            // Aplicar efeito de digitação no título
+            const title = document.querySelector('header h1');
+            const originalText = title.textContent;
+            title.textContent = '';
+            let i = 0;
+            
+            function typeWriter() {
+                if (i < originalText.length) {
+                    title.textContent += originalText.charAt(i);
+                    i++;
+                    setTimeout(typeWriter, 50);
+                }
+            }
+            
+            // Iniciar efeito após carregamento
+            setTimeout(typeWriter, 500);
+            
+            // Inicializar primeira seção como ativa
             const firstNavLink = document.querySelector('nav a');
             if (firstNavLink) {
-                firstNavLink.style.background = 'var(--secondary)';
-                firstNavLink.style.borderColor = 'var(--primary-light)';
+                firstNavLink.classList.add('active');
             }
-        });
-        
-        // Efeito de digitação no título (opcional)
-        const title = document.querySelector('header h1');
-        const originalText = title.textContent;
-        title.textContent = '';
-        let i = 0;
-        
-        function typeWriter() {
-            if (i < originalText.length) {
-                title.textContent += originalText.charAt(i);
-                i++;
-                setTimeout(typeWriter, 50);
-            }
-        }
-        
-        // Iniciar efeito de digitação após carregamento
-        window.addEventListener('load', function() {
-            setTimeout(typeWriter, 500);
         });
     </script>
 </body>
